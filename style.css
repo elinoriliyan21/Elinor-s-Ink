@@ -755,3 +755,16 @@ body.dark-mode .calculator-booking {
     background: #d6a3a3;
     color: #292525;
 }
+@media (max-width: 700px) {
+
+    .aftercare-grid {
+        grid-template-columns: 1fr;
+
+    }
+
+    .aftercare-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
