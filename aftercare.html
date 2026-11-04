@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Професионални съвети за правилна грижа и заздравяване на нова татуировка от ELINOR'S INK.">
+
+    <title>Aftercare | ELINOR'S INK</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #171515;
+            color: #e9e1dc;
+            font-family: Arial, sans-serif;
+        }
+
+        .aftercare-hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 90px 20px;
+            background:
+                linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.68)),
+                url("images/header-tattoo.jpg") center 45% / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #c9aaa5;
+            letter-spacing: 5px;
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .aftercare-hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 6vw, 68px);
+            font-weight: normal;
+            margin: 0 0 20px;
+        }
+
+        .aftercare-hero p {
+            color: #eee5df;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .aftercare-section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading span {
+            color: #c9aaa5;
+            font-size: 11px;
+            letter-spacing: 4px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: normal;
+            margin: 15px 0;
+        }
+
+        .section-heading p {
+            color: #b7aaa5;
+            line-height: 1.8;
+        }
+
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .care-card {
+            background: #211d1c;
+            border: 1px solid rgba(201,170,165,.3);
+            padding: 30px;
+            transition: .3s;
+        }
+
+        .care-card:hover {
+            transform: translateY(-5px);
+            border-color: #c9aaa5;
+        }
+
+        .care-number {
+            color: #c9aaa5;
+            font-size: 30px;
+            font-family: Georgia, serif;
+            margin-bottom: 20px;
+        }
+
+        .care-card h3 {
+            color: #e9e1dc;
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .care-card p {
+            color: #b7aaa5;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .warning-section {
+            background: #211d1c;
+            padding: 75px 25px;
+        }
+
+        .warning-content {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .warning-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .warning-item {
+            padding: 22px;
+            border-left: 3px solid #c9aaa5;
+            background: #292322;
+        }
+
+        .warning-item h3 {
+            font-size: 17px;
+            margin: 0 0 10px;
+        }
+
+        .warning-item p {
+            color: #b7aaa5;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .final-note {
+            max-width: 850px;
+            margin: 70px auto;
+            padding: 40px 25px;
+            text-align: center;
+            border-top: 1px solid rgba(201,170,165,.35);
+            border-bottom: 1px solid rgba(201,170,165,.35);
+        }
+
+        .final-note h2 {
+            font-family: Georgia, serif;
+            font-weight: normal;
+            font-size: 30px;
+        }
+
+        .final-note p {
+            color: #b7aaa5;
+            line-height: 1.9;
+        }
+
+        .site-footer {
+            background: #100e0e;
+            border-top: 1px solid rgba(201,170,165,.25);
+            padding: 50px 25px 20px;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .site-footer h2,
+        .site-footer h3 {
+            color: #e9e1dc;
+            font-family: Georgia, serif;
+            font-weight: normal;
+        }
+
+        .site-footer p,
+        .site-footer a {
+            color: #b7aaa5;
+            font-size: 14px;
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+        }
+
+        .site-footer a:hover {
+            color: #c9aaa5;
+        }
+
+        .footer-bottom {
+            max-width: 1150px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(201,170,165,.2);
+            text-align: center;
+            color: #8f8580;
+            font-size: 12px;
+        }
+
+        @media (max-width: 750px) {
+            .care-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .warning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .aftercare-hero {
+                min-height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ГОРНО МЕНЮ -->
+    <header class="site-header">
+        <a href="index.html" class="logo">ELINOR'S INK</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">НАЧАЛО</a>
+            <a href="about.html">ЗА МЕН</a>
+            <a href="gallery.html">ГАЛЕРИЯ</a>
+            <a href="services.html">УСЛУГИ</a>
+            <a href="pricing.html">ЦЕНИ</a>
+            <a href="aftercare.html" class="active">AFTERCARE</a>
+            <a href="faq.html">ВЪПРОСИ</a>
+            <a href="contacts.html">КОНТАКТИ</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- НАЧАЛНА СНИМКА -->
+        <section class="aftercare-hero">
+            <div class="hero-content">
+                <div class="eyebrow">ELINOR'S INK</div>
+                <h1>Грижа за новата татуировка</h1>
+                <p>
+                    Красивата татуировка заслужава правилна грижа.
+                    Научи как да се грижиш за кожата си и да запазиш
+                    цветовете и детайлите на своето изкуство.
+                </p>
+            </div>
+        </section>
+
+        <!-- ПЪРВИ ЧАСОВЕ -->
+        <section class="aftercare-section">
+            <div class="section-heading">
+                <span>СТЪПКА 01</span>
+                <h2>Първите часове</h2>
+                <p>Най-важната част от началото на възстановяването.</p>
+            </div>
+
+            <div class="care-grid">
+                <article class="care-card">
+                    <div class="care-number">01</div>
+                    <h3>Защитно покритие</h3>
+                    <p>
+                        Следвай инструкциите за сваляне на защитното
+                        покритие, което си получила от татуиста.
+                        Различните превръзки имат различно време за носене.
+                    </p>
+                </article>
+
+                <article class="care-card">
+                    <div class="care-number">02</div>
+                    <h3>Почистване</h3>
+                    <p>
+                        Измий внимателно ръцете си. Почисти татуировката
+                        според дадените инструкции с хладка вода и нежен,
+                        непарфюмиран сапун.
+                    </p>
+                </article>
+
+                <article class="care-card">
+                    <div class="care-number">03</div>
+                    <h3>Подсушаване</h3>
+                    <p>
+                        Подсуши внимателно с чиста хартиена кърпа.
+                        Не търкай и не използвай груби хавлии върху
+                        прясната татуировка.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ПЪРВИТЕ ДНИ -->
+        <section class="aftercare-section">
+            <div class="section-heading">
+                <span>СТЪПКА 02</span>
+                <h2>Грижа през първите дни</h2>
+                <p>Малките ежедневни навици помагат за правилното заздравяване.</p>
+            </div>
+
+            <div class="care-grid">
+                <article class="care-card">
+                    <div class="care-number">✧</div>
+                    <h3>Хидратация</h3>
+                    <p>
+                        Използвай подходящ продукт за грижа след татуиране,
+                        препоръчан от татуиста. Нанасяй много тънък слой
+                        върху чиста кожа.
+                    </p>
+                </article>
+
+                <article class="care-card">
+                    <div class="care-number">✧</div>
+                    <h3>Чисти дрехи</h3>
+                    <p>
+                        Носи чисти и свободни дрехи, които не се търкат
+                        и не притискат татуираната зона.
+                    </p>
+                </article>
+
+                <article class="care-card">
+                    <div class="care-number">✧</div>
+                    <h3>Не чопли кожата</h3>
+                    <p>
+                        Беленето и сърбежът могат да са част от
+                        възстановяването. Не дърпай коричките и не
+                        разчесвай татуировката.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- КАКВО ДА ИЗБЯГВАМЕ -->
+        <section class="warning-section">
+            <div class="warning-content">
+                <div class="section-heading">
+                    <span>ВАЖНО</span>
+                    <h2>Какво да НЕ правиш</h2>
+                    <p>За да предпазиш кожата си по време на възстановяването.</p>
+                </div>
+
+                <div class="warning-grid">
+                    <div class="warning-item">
+                        <h3>✕ Не излагай на слънце</h3>
+                        <p>Избягвай директното слънце върху прясната татуировка.</p>
+                    </div>
+
+                    <div class="warning-item">
+                        <h3>✕ Без басейни и сауни</h3>
+                        <p>Избягвай плуване, сауна и продължително киснене във вода, докато кожата заздравее.</p>
+                    </div>
+
+                    <div class="warning-item">
+                        <h3>✕ Не докосвай с мръсни ръце</h3>
+                        <p>Винаги измивай ръцете си преди контакт с татуираната зона.</p>
+                    </div>
+
+                    <div class="warning-item">
+                        <h3>✕ Не използвай агресивни продукти</h3>
+                        <p>Избягвай парфюмирани лосиони, спирт и неподходящи козметични продукти.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ФИНАЛНО ПОСЛАНИЕ -->
+        <section class="final-note">
+            <h2>Твоята татуировка заслужава грижа</h2>
+            <p>
+                Всяка кожа се възстановява индивидуално.
+                Следвай персоналните инструкции на своя татуист.
+                При силно зачервяване, нарастваща болка, гной,
+                температура или други тревожни симптоми потърси медицинска помощ.
+            </p>
+            <p>
+                ELINOR'S INK — изкуство, което остава.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ФУТЪР -->
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <h2>ELINOR'S INK</h2>
+                <p>Изкуство, което остава.</p>
+                <p>Всяка татуировка разказва история.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>БЪРЗИ ВРЪЗКИ</h3>
+                <a href="index.html">Начало</a>
+                <a href="about.html">За мен</a>
+                <a href="gallery.html">Галерия</a>
+                <a href="services.html">Услуги</a>
+                <a href="pricing.html">Цени</a>
+                <a href="aftercare.html">Aftercare</a>
+                <a href="faq.html">Въпроси</a>
+                <a href="contacts.html">Контакти</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>СВЪРЖИ СЕ С МЕН</h3>
+                <a href="tel:0896915603">089 691 5603</a>
+                <a href="mailto:elinoriliyan21@abv.bg">elinoriliyan21@abv.bg</a>
+                <p>София, България</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ELINOR'S INK. Всички права запазени.</p>
+            <p>Създадено с внимание към изкуството.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

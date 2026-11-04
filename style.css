@@ -1,535 +1,779 @@
-html {
-    scroll-behavior:smooth;
-    * {
+
+/* =====================================================
+   ELINOR'S INK
+   ОСНОВЕН CSS ФАЙЛ
+   Дизайн, цветове, меню, страници и анимации
+===================================================== */
+
+
+/* =====================================================
+   1. ОСНОВНИ НАСТРОЙКИ
+===================================================== */
+
+:root {
+    --black: #171515;
+    --dark: #211e1d;
+    --dark-card: #292525;
+    --beige: #e9e1dc;
+    --rose: #c9aaa5;
+    --white: #ffffff;
+    --muted: #b7aaa5;
+    --border: rgba(201, 170, 165, 0.25);
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #dedad7;
-    color: #222;
+html {
+    scroll-behavior: smooth;
 }
 
-header {
-    background: #292525;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    position: relative;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--beige);
+    line-height: 1.7;
+    overflow-x: hidden;
 }
-nav {
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   2. ГОРНО МЕНЮ
+===================================================== */
+
+.site-header {
+    width: 100%;
+    min-height: 85px;
+    padding: 18px 6%;
+    background: rgba(23, 21, 21, 0.97);
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--beige);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--rose);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: var(--beige);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    position: relative;
+    padding: 8px 0;
+    transition: var(--transition);
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--rose);
+    transition: var(--transition);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--rose);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--beige);
+    font-size: 28px;
+}
+
+
+/* =====================================================
+   3. НАЧАЛНА СТРАНИЦА
+===================================================== */
+
+.hero {
+    min-height: 85vh;
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 25px;
+
+    text-align: center;
+    padding: 80px 20px;
+
+    background-image: url("images/header-tattoo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 9px 14px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    transition: background 0.3s ease, color 0.3s ease;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(15, 13, 13, 0.55),
+        rgba(15, 13, 13, 0.82)
+    );
 }
 
-nav a:hover {
-    background: #d6a3a3;
-    color: #292525;
-}
-nav a:hover {
-    color: #d6a3a3;
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    animation: fadeUp 1s ease both;
 }
 
-    header h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 44px;
-    font-weight: 400;
+.hero-subtitle {
+    color: var(--rose);
+    font-size: 13px;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: clamp(45px, 8vw, 95px);
     letter-spacing: 8px;
-    margin: 10px 0;
-    text-transform: uppercase;
+    line-height: 1.2;
 }
 
-header p {
-    font-size: 18px;
+.hero-line {
+    width: 90px;
+    height: 2px;
+    background: var(--rose);
+    margin: 28px auto;
 }
 
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 50px 20px;
+.hero-description {
+    color: var(--beige);
+    font-size: 21px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--beige);
+    font-size: 10px;
+    letter-spacing: 3px;
+    z-index: 1;
+}
+
+.hero-scroll span {
+    display: block;
+    font-size: 24px;
+    color: var(--rose);
+    animation: bounce 1.5s infinite;
+}
+
+
+/* =====================================================
+   4. ОБЩИ БУТОНИ
+===================================================== */
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 30px;
+
+    border: 1px solid var(--rose);
+    background: var(--rose);
+    color: var(--black);
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    text-align: center;
+    transition: var(--transition);
+}
+
+.hero-button:hover {
+    background: transparent;
+    color: var(--rose);
+    transform: translateY(-4px);
+}
+
+
+/* =====================================================
+   5. ЗАГЛАВИЯ НА ВЪТРЕШНИТЕ СТРАНИЦИ
+===================================================== */
+
+.page-hero {
+    min-height: 330px;
+    padding: 75px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(23, 21, 21, 0.85),
+            rgba(23, 21, 21, 0.95)
+        ),
+        url("images/header-tattoo.jpg") center/cover;
+}
+
+.page-hero h1 {
+    color: var(--white);
+    font-size: clamp(32px, 5vw, 55px);
+    letter-spacing: 4px;
+}
+
+.page-hero > p:last-child {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   6. ОБЩИ ЗАГЛАВИЯ НА СЕКЦИИТЕ
+===================================================== */
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 55px;
     text-align: center;
 }
 
-main h2 {
-    font-size: 32px;
+.section-subtitle {
+    color: var(--rose);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    color: var(--beige);
+    font-size: clamp(27px, 4vw, 40px);
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   7. СТРАНИЦА ЗА МЕН
+===================================================== */
+
+.about-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 6%;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image {
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.about-image img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+}
+
+.about-content h2 {
+    color: var(--beige);
+    font-size: 38px;
     margin-bottom: 25px;
 }
 
-main p {
-    font-size: 18px;
-    line-height: 1.6;
+.about-content p {
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.9;
 }
 
-/* ГАЛЕРИЯ */
-
-#gallery {
-    margin-top: 50px;
+.about-content .hero-button {
+    margin-top: 15px;
 }
 
-.gallery {
+.about-philosophy {
+    padding: 85px 20px;
+    text-align: center;
+    background: var(--dark);
+}
+
+.about-philosophy h2 {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.about-philosophy > p:last-child {
+    max-width: 700px;
+    margin: auto;
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   8. ГАЛЕРИЯ
+===================================================== */
+
+.gallery-section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 90px 5%;
+}
+
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 30px;
+    gap: 22px;
 }
 
-.gallery img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-footer {
-    background: #292525;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
-
-/* За телефон */
-
-@media (max-width: 700px) {
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-        height: 350px;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 8px;
-    }
-
-    header h1 {
-        font-size: 32px;
-    }
-}
-/* Увеличаване на снимката */
-.gallery img {
+.gallery-item {
+    height: 350px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--dark-card);
     cursor: pointer;
-    transition: transform 0.3s;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Голям прозорец */
-#imageModal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
+.gallery-item img {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    justify-content: center;
-    align-items: center;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Голямата снимка */
-#bigImage {
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
+.gallery-item:hover img {
+    transform: scale(1.08);
+    opacity: 0.8;
+}
+
+.gallery-cta,
+.faq-cta {
+    padding: 85px 20px;
+    background: var(--dark);
+    text-align: center;
+}
+
+.gallery-cta h2,
+.faq-cta h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.gallery-cta p,
+.faq-cta p {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   9. ГОЛЯМА СНИМКА В ГАЛЕРИЯТА
+===================================================== */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px;
+}
+
+.image-modal img {
+    max-width: 85%;
+    max-height: 85vh;
     object-fit: contain;
 }
 
-/* X */
-.close {
+.modal-close {
     position: absolute;
     top: 20px;
     right: 35px;
-    color: rgb(241, 234, 234);
-    font-size: 45px;
-    cursor: pointer;
-}
-#imageModal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-}
 
-#imageModal #bigImage {
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
-}
-
-#imageModal .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
+    border: none;
+    background: none;
     color: white;
     font-size: 45px;
-    cursor: pointer;
 }
-#imageModal .prev,
-#imageModal .next {
+
+.modal-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
+
+    background: none;
     border: none;
+    color: white;
     font-size: 40px;
-    width: 55px;
-    height: 70px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background 0.3s ease;
+    padding: 15px;
 }
 
-#imageModal .prev {
-    left: 30px;
+.modal-prev {
+    left: 15px;
 }
 
-#imageModal .next {
-    right: 30px;
+.modal-next {
+    right: 15px;
 }
 
-#imageModal .prev:hover,
-#imageModal .next:hover {
-    background: rgba(255, 255, 255, 0.35);
+.modal-close:hover,
+.modal-arrow:hover {
+    color: var(--rose);
 }
-#tattoos {
+
+
+/* =====================================================
+   10. УСЛУГИ
+===================================================== */
+
+.services-section {
+    padding: 90px 6%;
+}
+
+.services-grid {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    padding: 35px 28px;
     text-align: center;
-    padding: 60px 20px;
+    transition: var(--transition);
 }
 
-.tattoo-info {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 30px auto;
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--rose);
 }
 
-.tattoo-info div {
-    width: 280px;
-    padding: 25px;
-    border-radius: 15px;
-    background:rgb(241, 234, 234);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-icon {
+    display: inline-block;
+    color: var(--rose);
+    font-size: 32px;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease;
 }
 
-.tattoo-info h3 {
+.service-card:hover .service-icon,
+.aftercare-card:hover .service-icon {
+    transform: scale(1.2) rotate(8deg);
+}
+
+.service-card h3 {
+    font-size: 19px;
     margin-bottom: 15px;
 }
-.tattoo-info div {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.tattoo-info div:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-#contacts {
-    text-align: center;
-    padding: 50px 20px;
-    background: #dedad7;
-}
-
-#contacts h2 {
-    font-size: 32px;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-}
-
-#contacts p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin: 10px 0;
-}
-#contacts h3 {
-    margin-top: 35px;
-    font-size: 24px;
-}
-
-form {
-    max-width: 500px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-form input,
-form textarea {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-}
-
-form textarea {
-    resize: vertical;
-}
-
-form button {
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    background: #292525;
-    color: white;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #b7b4b4;
-}
-.booking-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 30px;
-    background: #292525;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.booking-button:hover {
-    background: #d6a3a3;
-}
-@media (max-width: 700px) {
-   nav {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-nav a {
+.service-card p {
+    color: var(--muted);
     font-size: 14px;
-    padding: 7px 12px;
-    margin: 0;
-}
-    header h1 {
-        font-size: 32px;
-    }
-
-    header p {
-        font-size: 16px;
-    }
-
-    main {
-        padding: 35px 15px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .gallery img {
-        height: auto;
-        max-height: 450px;
-    }
-
-    .tattoo-info {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tattoo-info div {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    #contacts {
-        padding: 40px 15px;
-    }
-
-    form {
-        width: 100%;
-    }
-    #about {
-    padding: 45px 15px;
 }
 
-.about-photo {
-    float: none;
+
+/* =====================================================
+   11. ЦЕНОВА ТАБЛИЦА
+===================================================== */
+
+.price-section {
+    padding: 90px 6%;
+    background: var(--dark);
+}
+
+.price-table-wrapper {
+    max-width: 950px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--dark-card);
+    text-align: center;
+}
+
+.price-table th {
+    background: #352d2b;
+    color: var(--rose);
+    padding: 18px 12px;
+    font-size: 14px;
+}
+
+.price-table td {
+    padding: 18px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--beige);
+}
+
+.price-table tr:hover td {
+    background: rgba(201, 170, 165, 0.08);
+}
+
+.price-note {
+    max-width: 950px;
+    margin: 20px auto 0;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/* =====================================================
+   12. КАЛКУЛАТОР
+===================================================== */
+
+.calculator-section {
+    padding: 90px 6%;
+}
+
+.calculator-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+}
+
+.calculator-box h3 {
+    font-size: 19px;
+    margin: 25px 0 18px;
+}
+
+.body-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.body-options button {
+    padding: 12px 20px;
+    background: transparent;
+    color: var(--beige);
+    border: 1px solid var(--rose);
+    transition: var(--transition);
+}
+
+.body-options button:hover,
+.body-options button.active {
+    background: var(--rose);
+    color: var(--black);
+}
+
+#selectedZone {
+    color: var(--rose);
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.calculator-box select {
     display: block;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 30px;
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+
+    background: var(--black);
+    color: var(--beige);
+    border: 1px solid var(--border);
 }
 
-#about p {
-    font-size: 16px;
-    line-height: 1.7;
-}
-}
-/* ЗА МЕН */
-#about {
-    padding: 70px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: left;
-    overflow: hidden;
+.calculator-box select:focus {
+    border-color: var(--rose);
 }
 
-#about h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
+.calculator-box .hero-button {
+    margin-top: 10px;
 }
 
-.about-photo {
-    float: left;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 0 35px 20px 0;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+#priceResult {
+    margin-top: 25px;
+    color: var(--rose);
+    font-size: 22px;
+    font-weight: bold;
 }
 
-#about p {
-    font-size: 17px;
-    line-height: 1.8;
-    margin: 0 0 20px 0;
-}
-/* AFTERCARE */
-#aftercare {
-    text-align: center;
-    padding: 70px 20px;
+.calculator-booking {
+    margin-top: 15px;
 }
 
-#aftercare h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
 
-.aftercare-intro {
-    max-width: 750px;
-    margin: 0 auto 40px;
+/* =====================================================
+   13. AFTERCARE
+===================================================== */
+
+.aftercare-intro,
+.aftercare-longterm {
+    padding: 80px 6%;
 }
 
 .aftercare-grid {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1150px;
+    margin: auto;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
 .aftercare-card {
-    background: rgb(241, 234, 234);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    padding: 32px 25px;
+    transition: var(--transition);
 }
 
 .aftercare-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--rose);
 }
 
 .aftercare-card h3 {
-    font-size: 20px;
-    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 19px;
+}
+
+.aftercare-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.aftercare-warning {
+    max-width: 1000px;
+    margin: 30px auto 90px;
+    padding: 35px;
+
+    background: rgba(201, 170, 165, 0.1);
+    border-left: 4px solid var(--rose);
+}
+
+.aftercare-warning h2 {
+    color: var(--rose);
     margin-bottom: 15px;
 }
-Я
-.aftercare-card p {
-    font-size: 16px;
-    line-height: 1.6;
+
+.aftercare-warning p {
+    color: var(--muted);
+    margin-bottom: 12px;
 }
 
-.aftercare-note {
-    max-width: 900px;
-    margin: 40px auto 0;
-    padding: 25px;
-    background: rgb(241, 234, 234);
-    border-radius: 15px;
-}
 
-.aftercare-note h3 {
-    margin-top: 0;
-}
-/* Често задавани въпроси */
-#faq {
-    padding: 70px 20px;
-    text-align: center;
-}
+/* =====================================================
+   14. ЧЕСТО ЗАДАВАНИ ВЪПРОСИ
+===================================================== */
 
-#faq h2 {
-    font-size: 32px;
-    margin-bottom: 35px;
-    letter-spacing: 2px;
+.faq-section {
+    padding: 90px 6%;
 }
 
 .faq-container {
     max-width: 850px;
-    margin: 0 auto;
-    text-align: left;
+    margin: auto;
 }
 
 .faq-item {
-    background: rgb(241, 234, 234);
-    margin-bottom: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    margin-bottom: 14px;
+    transition: var(--transition);
 }
 
 .faq-item summary {
-    padding: 20px 25px;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 22px 25px;
     cursor: pointer;
     list-style: none;
+    color: var(--beige);
+    font-weight: bold;
     position: relative;
-    padding-right: 50px;
+    padding-right: 55px;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -540,231 +784,445 @@ nav a {
     content: "+";
     position: absolute;
     right: 25px;
-    font-size: 24px;
-    font-weight: normal;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--rose);
+    font-size: 25px;
 }
 
 .faq-item[open] summary::after {
     content: "−";
 }
 
+.faq-item[open] {
+    border-color: var(--rose);
+}
+
 .faq-item p {
-    padding: 0 25px 20px;
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.7;
-}
-/*тъмен/светъл режим*/
-#themeToggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 20px;
-    background: white;
-    color: #292525;
+    padding: 0 25px 23px;
+    color: var(--muted);
     font-size: 14px;
-    cursor: pointer;
-    font-weight: bold;
 }
 
-body.dark-mode {
-    background: #1f1c1c;
-    color: #f5f1ee;
+
+/* =====================================================
+   15. КОНТАКТИ
+===================================================== */
+
+.contacts-section,
+.contact-form-section,
+.location-section {
+    padding: 90px 6%;
 }
 
-body.dark-mode .tattoo-info div,
-body.dark-mode .aftercare-card,
-body.dark-mode .faq-item {
-    background: #2b2727;
-    color: #f5f1ee;
+.contact-cards {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-body.dark-mode .aftercare-note,
-body.dark-mode #contacts {
-    background: #292525;
-}
-
-body.dark-mode #themeToggle {
-    background: #292525;
-    color: white;
-}
-/* Калкулатор */
-#calculator {
-    padding: 70px 20px;
+.contact-card {
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    padding: 35px 28px;
     text-align: center;
+    transition: var(--transition);
 }
 
-#calculator h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+.contact-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--rose);
 }
 
-#calculator > p {
-    max-width: 650px;
-    margin: 0 auto 35px;
+.contact-card h3 {
+    font-size: 17px;
+    margin-bottom: 15px;
 }
 
-.calculator-box {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 35px;
-    background: white;
-    border-radius: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.1);
-    text-align: left;
+.contact-card p,
+.contact-card a {
+    color: var(--muted);
+    font-size: 14px;
 }
 
-.calculator-box label {
-    display: block;
+.contact-card a {
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: var(--transition);
+}
+
+.contact-card a:hover {
+    color: var(--rose);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
     margin-bottom: 8px;
-    font-weight: bold;
-    font-size: 16px;
+    margin-top: 12px;
+    color: var(--beige);
+    font-size: 14px;
 }
 
-.calculator-box select {
-    width: 100%;
-    padding: 13px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    background: white;
-}
-
-.calculator-box button {
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
     width: 100%;
     padding: 14px;
-    border: none;
-    border-radius: 8px;
-    background: #292525;
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background .3s ease;
+    margin-bottom: 15px;
+
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    color: var(--beige);
+    outline: none;
 }
 
-.calculator-box button:hover {
-    background: #d6a3a3;
-    color: #292525;
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--rose);
 }
 
-#priceResult {
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .hero-button {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.contact-note {
+    max-width: 700px;
+    margin: 20px auto 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.location-section {
+    background: var(--dark);
+    text-align: center;
+}
+
+.location-section .hero-button {
     margin-top: 25px;
-    padding: 18px;
-    background: #f5f5f5;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
 }
 
-/* Калкулатор в тъмен режим */
-body.dark-mode .calculator-box {
-    background: #2b2727;
+
+/* =====================================================
+   16. ФУТЪР
+===================================================== */
+
+.site-footer {
+    background: #111010;
+    color: var(--beige);
+    padding: 65px 8% 20px;
+    border-top: 1px solid var(--border);
 }
 
-body.dark-mode .calculator-box select {
-    background: #1f1c1c;
-    color: white;
-    border-color: #555;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto 45px;
+
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.3fr;
+    gap: 50px;
 }
 
-body.dark-mode #priceResult {
-    background: #1f1c1c;
-    color: white;
-}
-/* Зони за татуировка */
-.body-map {
-    max-width: 500px;
-    margin: 0 auto 30px;
-    text-align: center;
+.footer-brand h2 {
+    font-size: 27px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
 }
 
-.body-map h3 {
-    font-size: 22px;
-    margin-bottom: 20px;
+.footer-brand p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
 }
 
-.body-options {
+.footer-links,
+.footer-contact {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    gap: 13px;
 }
 
-.body-options button {
-    padding: 10px 18px;
-    border: 1px solid #292525;
-    border-radius: 20px;
-    background: white;
-    color: #292525;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: var(--rose);
 }
 
-.body-options button:hover {
-    background: #d6a3a3;
-    border-color: #d6a3a3;
-}
-
-.body-options button.active {
-    background: #292525;
-    color: white;
-}
-
-#selectedZone {
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-/* Тъмен режим */
-body.dark-mode .body-options button {
-    background: #2b2727;
-    color: white;
-    border-color: #666;
-}
-
-body.dark-mode .body-options button.active {
-    background: #d6a3a3;
-    color: #292525;
-}
-.calculator-booking {
-    display: none;
-    margin-top: 15px;
-    padding: 13px 25px;
-    background: #292525;
-    color: white;
+.footer-links a,
+.footer-contact a {
+    color: var(--beige);
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+    transition: var(--transition);
 }
 
-.calculator-booking:hover {
-    background: #d6a3a3;
-    color: #292525;
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--rose);
+    transform: translateX(5px);
 }
 
-body.dark-mode .calculator-booking {
-    background: #d6a3a3;
-    color: #292525;
+.footer-contact p {
+    font-size: 14px;
+    color: var(--muted);
 }
-@media (max-width: 700px) {
 
-    .aftercare-grid {
-        grid-template-columns: 1fr;
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
 
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    color: #8f8581;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   17. АНИМАЦИИ
+===================================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
     }
 
-    .aftercare-card {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(9px);
+    }
+}
+
+
+/* =====================================================
+   18. АДАПТАЦИЯ ЗА ТАБЛЕТИ
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        gap: 13px;
+    }
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-section {
+        gap: 35px;
+    }
+
+}
+
+
+/* =====================================================
+   19. АДАПТАЦИЯ ЗА ТЕЛЕФОНИ
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        min-height: 70px;
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
         width: 100%;
-        box-sizing: border-box;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 12px;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 13px 5px;
+        border-top: 1px solid var(--border);
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        letter-spacing: 4px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .page-hero {
+        min-height: 260px;
+        padding: 55px 20px;
+    }
+
+    .page-hero h1 {
+        letter-spacing: 2px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        padding: 55px 6%;
+        gap: 30px;
+    }
+
+    .about-image img {
+        height: auto;
+        max-height: 500px;
+    }
+
+    .about-content h2 {
+        font-size: 30px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gallery-item {
+        height: 350px;
+    }
+
+    .services-grid,
+    .aftercare-grid,
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section,
+    .price-section,
+    .calculator-section,
+    .aftercare-section,
+    .aftercare-intro,
+    .faq-section,
+    .contacts-section,
+    .contact-form-section,
+    .location-section {
+        padding: 55px 6%;
+    }
+
+    .calculator-box {
+        padding: 25px 18px;
+    }
+
+    .body-options {
+        justify-content: center;
+    }
+
+    .price-table th,
+    .price-table td {
+        padding: 12px 9px;
+        font-size: 13px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-modal {
+        padding: 50px 15px;
+    }
+
+    .image-modal img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .modal-prev {
+        left: 5px;
+    }
+
+    .modal-next {
+        right: 5px;
+    }
+
+    .aftercare-warning {
+        margin: 30px 6% 55px;
+        padding: 25px 18px;
+    }
+
+}
+
+
+/* =====================================================
+   20. ДОСТЪПНОСТ - НАМАЛЕНО ДВИЖЕНИЕ
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 
 }

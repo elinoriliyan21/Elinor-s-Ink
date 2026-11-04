@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Свържи се с ELINOR'S INK за въпроси и запитвания за татуировки.">
+
+    <title>Контакти | ELINOR'S INK</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ГОРНО МЕНЮ -->
+    <header class="site-header">
+
+        <a href="index.html" class="logo">ELINOR'S INK</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">НАЧАЛО</a>
+            <a href="about.html">ЗА МЕН</a>
+            <a href="gallery.html">ГАЛЕРИЯ</a>
+            <a href="services.html">УСЛУГИ</a>
+<a href="pricing.html">ЦЕНИ</a>
+            <a href="aftercare.html">AFTERCARE</a>
+            <a href="faq.html">ВЪПРОСИ</a>
+            <a href="contacts.html" class="active">КОНТАКТИ</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ЗАГЛАВИЕ -->
+        <section class="page-hero">
+
+            <p class="hero-subtitle">ELINOR'S INK</p>
+
+            <h1>КОНТАКТИ</h1>
+
+            <div class="hero-line"></div>
+
+            <p>Нека превърнем твоята идея в изкуство.</p>
+
+        </section>
+
+
+        <!-- КОНТАКТНА ИНФОРМАЦИЯ -->
+        <section class="contacts-section">
+
+            <div class="section-heading">
+
+                <p class="section-subtitle">СВЪРЖИ СЕ С МЕН</p>
+
+                <h2>Ще се радвам да обсъдим твоята идея</h2>
+
+                <p>
+                    Имаш идея за татуировка или въпрос?
+                    Използвай някой от начините за връзка по-долу.
+                </p>
+
+            </div>
+
+
+            <div class="contact-cards">
+
+                <article class="contact-card">
+                    <span class="service-icon">☎</span>
+                    <h3>ТЕЛЕФОН</h3>
+                    <a href="tel:0896915603">089 691 5603</a>
+                </article>
+
+                <article class="contact-card">
+                    <span class="service-icon">✉</span>
+                    <h3>ИМЕЙЛ</h3>
+                    <a href="mailto:elinoriliyan21@abv.bg">
+                        elinoriliyan21@abv.bg
+                    </a>
+                </article>
+
+                <article class="contact-card">
+                    <span class="service-icon">⌖</span>
+                    <h3>ЛОКАЦИЯ</h3>
+                    <p>София, България</p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ФОРМА ЗА ЗАПИТВАНЕ -->
+        <section class="contact-form-section">
+
+            <div class="section-heading">
+
+                <p class="section-subtitle">ИМАШ ИДЕЯ?</p>
+
+                <h2>Изпрати ми запитване</h2>
+
+                <p>
+                    Попълни формата и ще можеш да изпратиш
+                    съобщението си чрез имейл.
+                </p>
+
+            </div>
+
+
+            <form class="contact-form"
+                  action="mailto:elinoriliyan21@abv.bg"
+                  method="post"
+                  enctype="text/plain">
+
+                <label for="contactName">Твоето име</label>
+
+                <input
+                    type="text"
+                    id="contactName"
+                    name="Име"
+                    placeholder="Въведи името си"
+                    required
+                >
+
+
+                <label for="contactEmail">Имейл</label>
+
+                <input
+                    type="email"
+                    id="contactEmail"
+                    name="Имейл"
+                    placeholder="example@email.com"
+                    required
+                >
+
+
+                <label for="contactSubject">Тема</label>
+
+                <select id="contactSubject" name="Тема" required>
+
+                    <option value="">Избери тема</option>
+
+                    <option value="Запитване за татуировка">
+                        Запитване за татуировка
+                    </option>
+
+                    <option value="Запазване на час">
+                        Запазване на час
+                    </option>
+
+                    <option value="Въпрос">
+                        Въпрос
+                    </option>
+
+                    <option value="Друго">
+                        Друго
+                    </option>
+
+                </select>
+
+
+                <label for="contactMessage">Твоето съобщение</label>
+
+                <textarea
+                    id="contactMessage"
+                    name="Съобщение"
+                    rows="6"
+                    placeholder="Разкажи ми за своята идея..."
+                    required
+                ></textarea>
+
+
+                <button type="submit" class="hero-button">
+                    ИЗПРАТИ СЪОБЩЕНИЕ
+                </button>
+
+            </form>
+
+            <p class="contact-note">
+                При изпращане ще се отвори имейл приложението ти.
+                Формата не съхранява автоматично запитвания.
+            </p>
+
+        </section>
+
+
+        <!-- КАРТА -->
+        <section class="location-section">
+
+            <div class="section-heading">
+
+                <p class="section-subtitle">НАМЕРИ МЕ</p>
+
+                <h2>София, България</h2>
+
+                <p>
+                    За точна локация и информация за посещение,
+                    свържи се с мен предварително.
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Sofia+Bulgaria"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hero-button"
+                >
+                    ОТВОРИ GOOGLE MAPS
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ФУТЪР -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <h2>ELINOR'S INK</h2>
+                <p>Изкуство, което остава.</p>
+                <p>Всяка татуировка разказва история.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>БЪРЗИ ВРЪЗКИ</h3>
+                <a href="index.html">Начало</a>
+                <a href="about.html">За мен</a>
+                <a href="gallery.html">Галерия</a>
+                <a href="services.html">Услуги</a>
+            <a href="pricing.html">Цени</a>
+                <a href="aftercare.html">Aftercare</a>
+                <a href="faq.html">Въпроси</a>
+                <a href="contacts.html">Контакти</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>СВЪРЖИ СЕ С МЕН</h3>
+                <a href="tel:0896915603">089 691 5603</a>
+                <a href="mailto:elinoriliyan21@abv.bg">
+                    elinoriliyan21@abv.bg
+                </a>
+                <p>София, България</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ELINOR'S INK. Всички права запазени.</p>
+            <p>Създадено с внимание към изкуството.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

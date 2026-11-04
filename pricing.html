@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Татуировки, услуги и ориентировъчни цени в ELINOR'S INK.">
+
+    <title>Цени | ELINOR'S INK</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ГОРНО МЕНЮ -->
+    <header class="site-header">
+
+        <a href="index.html" class="logo">ELINOR'S INK</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">НАЧАЛО</a>
+            <a href="about.html">ЗА МЕН</a>
+            <a href="gallery.html">ГАЛЕРИЯ</a>
+        <a href="services.html">УСЛУГИ</a>
+<a href="pricing.html">ЦЕНИ</a>
+            <a href="aftercare.html">AFTERCARE</a>
+            <a href="faq.html">ВЪПРОСИ</a>
+            <a href="contacts.html">КОНТАКТИ</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ЗАГЛАВИЕ -->
+        <section class="page-hero">
+
+            <p class="hero-subtitle">ELINOR'S INK</p>
+
+            <h1> ЦЕНИ</h1>
+
+            <div class="hero-line"></div>
+
+            <p>Твоето тяло. Твоята история. Твоето изкуство.</p>
+
+        </section>
+
+        <!-- КАЛКУЛАТОР -->
+        <section class="calculator-section" id="calculator">
+
+            <div class="section-heading">
+
+                <p class="section-subtitle">ПЛАНИРАЙ СВОЯТА ТАТУИРОВКА</p>
+
+                <h2>Калкулатор за цена</h2>
+
+                <p>
+                    Избери зона и размер, за да получиш
+                    ориентировъчна цена.
+                </p>
+
+            </div>
+
+
+            <div class="calculator-box">
+
+                <h3>1. Избери място върху тялото</h3>
+
+                <div class="body-options">
+
+                    <button type="button" onclick="selectBodyZone('arm')">
+                        Ръка
+                    </button>
+
+                    <button type="button" onclick="selectBodyZone('leg')">
+                        Крак
+                    </button>
+
+                    <button type="button" onclick="selectBodyZone('back')">
+                        Гръб
+                    </button>
+
+                    <button type="button" onclick="selectBodyZone('chest')">
+                        Гърди
+                    </button>
+
+                    <button type="button" onclick="selectBodyZone('ribs')">
+                        Ребра
+                    </button>
+
+                    <button type="button" onclick="selectBodyZone('neck')">
+                        Врат
+                    </button>
+
+                </div>
+
+                <p id="selectedZone">
+                    Избери зона от бутоните по-горе.
+                </p>
+<select id="tattooPlace" style="display: none;">
+    <option value="arm">Ръка</option>
+    <option value="leg">Крак</option>
+    <option value="back">Гръб</option>
+    <option value="chest">Гърди</option>
+    <option value="ribs">Ребра</option>
+    <option value="neck">Врат</option>
+</select>
+
+                <h3>2. Избери размер</h3>
+
+                <select id="tattooSize">
+                    <option value="small">Малка татуировка</option>
+                    <option value="medium">Средна татуировка</option>
+                    <option value="large">Голяма татуировка</option>
+                </select>
+
+
+                
+
+                <button type="button"
+                        class="hero-button"
+                        onclick="calculatePrice()">
+                    ИЗЧИСЛИ ЦЕНАТА
+                </button>
+
+
+                <p id="priceResult" aria-live="polite"></p>
+
+                <a href="contacts.html"
+                   class="hero-button calculator-booking"
+                   style="display: none;">
+                    ЗАПИТАЙ ЗА ЧАС
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ФУТЪР -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <h2>ELINOR'S INK</h2>
+                <p>Изкуство, което остава.</p>
+                <p>Всяка татуировка разказва история.</p>
+            </div>
+
+           <div class="footer-links">
+                <h3>БЪРЗИ ВРЪЗКИ</h3>
+                <a href="index.html">Начало</a>
+                <a href="about.html">За мен</a>
+                <a href="gallery.html">Галерия</a>
+                 <a href="services.html">Услуги</a>
+            <a href="pricing.html">Цени</a>
+                <a href="aftercare.html">Aftercare</a>
+                <a href="faq.html">Въпроси</a>
+                <a href="contacts.html">Контакти</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>СВЪРЖИ СЕ С МЕН</h3>
+                <a href="tel:0896915603">089 691 5603</a>
+                <a href="mailto:elinoriliyan21@abv.bg">
+                    elinoriliyan21@abv.bg
+                </a>
+                <p>София, България</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ELINOR'S INK. Всички права запазени.</p>
+            <p>Създадено с внимание към изкуството.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

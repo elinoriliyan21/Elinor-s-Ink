@@ -2,400 +2,120 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELINOR'S INK</title>
+
+    <title>ELINOR'S INK | Tattoo Studio</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        
-    <button id="themeToggle">🌙 Тъмен режим</button>
-
-       <nav>
-    <a href="#">НАЧАЛО</a>
-    <a href="#about">ЗА МЕН</a>
-    <a href="#gallery">ГАЛЕРИЯ</a>
-    <a href="#tattoos">ТАТУИРОВКИ</a>
-    <a href="#aftercare">AFTERCARE</a>
-    <a href="#calculator">ЦЕНОРАЗПИС</a>
-    <a href="#faq">ЧЕСТО ЗАДАВАНИ ВЪПРОСИ</a>
-    <a href="#contacts">КОНТАКТИ</a>
-</nav>
-        <h1>ELINOR'S INK</h1>
-        <p>Изкуство, което остава.</p>
-        <a href="#contacts" class="booking-button">Запази час</a>
-    </header>
-
-    
-<main>
-    <h2>Добре дошли!</h2>
-
-    <p>
-        Добре дошли в ELINOR'S INK —
-        място за индивидуални идеи, изкуство и мастило.
-    </p>
-
-    
-<section id="about">
-            <h2>ЗА МЕН</h2>
-            <img class="about-photo" src="images/elinor.jpg" alt="Елинор">
-<p>
-
-                Казвам се Елинор и съм на 18 години. Занимавам се с татуировки
-
-                от около една година, но любовта ми към изкуството започна
-
-                много по-рано.
-
-            </p>
-
-            <p>
-
-                Още от малка винаги съм обичала да рисувам. Родителите ми
-
-                първи забелязаха, че това е нещо, в което съм добра и винаги са ме подкрепяли.
-
-            </p>
-
-            <p>
-
-                През годините съм имала различни интереси. Винаги съм
-
-                търсела нещо ново, което
-
-                да ме кара да се развивам и да творя.
-
-            </p>
-
-            <p>
-
-                Така открих татуировките. Това, което първоначално беше
-
-                просто нещо ново, постепенно се превърна в занимание,
-
-                което наистина обичам. Харесва ми, че мога да съчетавам
-
-                рисуването с работата си и да превръщам идеите си в
-
-                истинско изкуство върху кожата.
-
-            </p>
-
-            <p>
-
-                За мен всяка татуировка е нещо лично. Тя може да бъде
-
-                спомен, символ, чувство или просто красива рисунка, която
-
-                човек избира да носи със себе си. Именно това ми харесва
-
-                най-много – че всяка история е различна и всяка татуировка
-
-                има свое значение.
-
-            </p>
-
-            <p>
-
-                Все още съм в началото на своя път и имам много неща,
-
-                които искам да науча и развия. Вярвам, че с постоянство,
-
-                практика и желание мога да ставам все по-добра и да
-
-                развивам своя собствен стил.
-   
-
- <section id="gallery">
-    <h2>ГАЛЕРИЯ</h2>
-
-    <div class="gallery">
-
-    <img src="images/tattoo1.jpg" alt="Татуировка 1" onclick="openImage(this)">
-<img src="images/tattoo2.jpg" alt="Татуировка 2" onclick="openImage(this)">
-<img src="images/tattoo3.jpg" alt="Татуировка 3" onclick="openImage(this)">
-<img src="images/tattoo4.jpg" alt="Татуировка 4" onclick="openImage(this)">
-<img src="images/tattoo5.jpg" alt="Татуировка 5" onclick="openImage(this)">
-<img src="images/tattoo6.jpg" alt="Татуировка 6" onclick="openImage(this)">
-<img src="images/tattoo7.jpg" alt="Татуировка 7" onclick="openImage(this)">
-</div>
-
-<div id="imageModal" class="modal">
-    <span class="close" onclick="closeImage()">&times;</span>
-
-    <button class="prev" onclick="previousImage()">&#10094;</button>
-
-    <img id="bigImage" src="" alt="Увеличена снимка">
-
-    <button class="next" onclick="nextImage()">&#10095;</button>
-</div>
-</section>
-
-<section id="tattoos">
-    <h2>ТАТУИРОВКИ</h2>
-
-    <div class="tattoo-info">
-        <div>
-            <h3>Индивидуален дизайн</h3>
-            <p>
-                Всяка татуировка е създадена специално за теб,
-                според твоята идея, стил и предпочитания.
-            </p>
-        </div>
-
-        <div>
-            <h3>Консултация</h3>
-            <p>
-                Преди всяка татуировка обсъждаме идеята,
-                мястото и размера, за да получим желания резултат.
-            </p>
-        </div>
-
-        <div>
-            <h3>Татуировки с характер</h3>
-            <p>
-                Малки или големи, всяка татуировка може да носи
-                лично послание и специално значение.
-            </p>
-        </div>
-    </div>
-</section>
-<section id="aftercare">
-    <h2>AFTERCARE</h2>
-
-    <p class="aftercare-intro">
-        Правилната грижа за новата татуировка е важна за доброто
-        заздравяване и за запазването на нейния красив вид.
-    </p>
-
-    <div class="aftercare-grid">
-
-        <div class="aftercare-card">
-            <h3>🧼 Почистване</h3>
-            <p>
-                Почиствай татуировката внимателно с хладка вода и
-                нежен сапун. Не търкай кожата и не използвай груба
-                гъба или кърпа.
-            </p>
-        </div>
-
-        <div class="aftercare-card">
-            <h3>💧 Хидратация</h3>
-            <p>
-                След почистване подсушавай внимателно с чиста
-                хартиена кърпа. Нанасяй тънък слой от препоръчания
-                продукт за грижа за татуировки.
-            </p>
-        </div>
-
-        <div class="aftercare-card">
-            <h3>☀️ Пази от слънце</h3>
-            <p>
-                Избягвай директното излагане на слънце, докато
-                татуировката заздравява. След пълното заздравяване
-                използвай слънцезащитен продукт.
-            </p>
-        </div>
-
-        <div class="aftercare-card">
-            <h3>🚿 Избягвай накисване</h3>
-            <p>
-                Не потапяй прясната татуировка във вана, басейн,
-                джакузи или други водоеми, докато кожата не заздравее.
-            </p>
-        </div>
-
-        <div class="aftercare-card">
-            <h3>✋ Не чопли кожата</h3>
-            <p>
-                По време на заздравяването може да има лющене или
-                сърбеж. Не чопли и не отлепяй люспичките – остави
-                кожата да се възстанови естествено.
-            </p>
-        </div>
-
-        <div class="aftercare-card">
-            <h3>👕 Пази от триене</h3>
-            <p>
-                Избягвай тесни дрехи и силно триене върху татуировката.
-                Поддържай мястото чисто и го оставяй да диша.
-            </p>
-        </div>
-
-    </div>
-
-    <div class="aftercare-note">
-        <h3>Важно</h3>
-        <p>
-            Времето за заздравяване може да бъде различно при всеки човек.
-            Следвай конкретните инструкции, които получаваш след татуирането.
-            При необичайни или влошаващи се симптоми потърси медицински съвет.
-        </p>
-    </div>
-</section>
-
-
-<section id="calculator">
-    <h2>КАЛКУЛАТОР ЗА ЦЕНА</h2>
-
-    <p>
-        Избери размер и място на татуировката,
-        за да получиш ориентировъчна цена.
-    </p>
-<div class="body-map">
-    <h3>Избери зона</h3>
-
-    <div class="body-options">
-        <button type="button" onclick="selectBodyZone('arm')">Ръка</button>
-        <button type="button" onclick="selectBodyZone('leg')">Крак</button>
-        <button type="button" onclick="selectBodyZone('back')">Гръб</button>
-        <button type="button" onclick="selectBodyZone('chest')">Гърди</button>
-        <button type="button" onclick="selectBodyZone('ribs')">Ребра</button>
-        <button type="button" onclick="selectBodyZone('neck')">Врат</button>
-    </div>
-
-    <p id="selectedZone">Избрана зона: няма</p>
-</div>
-    <div class="calculator-box">
-
-        <label for="tattooSize">Размер:</label>
-        <select id="tattooSize">
-            <option value="small">Малка</option>
-            <option value="medium">Средна</option>
-            <option value="large">Голяма</option>
-        </select>
-
-        <label for="tattooPlace">Място:</label>
-        <select id="tattooPlace">
-            <option value="arm">Ръка</option>
-            <option value="leg">Крак</option>
-            <option value="back">Гръб</option>
-            <option value="chest">Гърди</option>
-            <option value="nesk">Врат</option>
-            <option value="ribsr">Ребра</option>
-        </select>
-
-        <button type="button" onclick="calculatePrice()">
-            Изчисли цена
+    <!-- ГОРНО МЕНЮ -->
+    <header class="site-header">
+
+        <a href="index.html" class="logo">
+            ELINOR'S INK
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">
+            ☰
         </button>
 
-        <div id="priceResult">
-            Ориентировъчна цена: —
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html" class="active">НАЧАЛО</a>
+            <a href="about.html">ЗА МЕН</a>
+            <a href="gallery.html">ГАЛЕРИЯ</a>
+            <a href="services.html">УСЛУГИ</a>
+            <a href="pricing.html">ЦЕНИ</a>
+            <a href="aftercare.html">AFTERCARE</a>
+            <a href="faq.html">ВЪПРОСИ</a>
+            <a href="contacts.html">КОНТАКТИ</a>
+        </nav>
+
+    </header>
+
+
+    <!-- НАЧАЛНА СЕКЦИЯ -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-subtitle">
+                    TATTOO STUDIO
+                </p>
+
+                <h1>ELINOR'S INK</h1>
+
+                <div class="hero-line"></div>
+
+                <p class="hero-description">
+                    Изкуство, което остава
+                </p>
+
+                <a href="gallery.html" class="hero-button">
+                    РАЗГЛЕДАЙ ГАЛЕРИЯТА
+                </a>
+
+            </div>
+
+            <div class="hero-scroll">
+                SCROLL TO EXPLORE
+                <span>↓</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ДОЛНА ЧАСТ -->
+    
+<footer class="site-footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h2>ELINOR'S INK</h2>
+            <p>Изкуство, което остава.</p>
+            <p>Всяка татуировка разказва история.</p>
+        </div>
+<div class="footer-links">
+                <h3>БЪРЗИ ВРЪЗКИ</h3>
+                <a href="index.html">Начало</a>
+                <a href="about.html">За мен</a>
+                <a href="gallery.html">Галерия</a>
+                 <a href="services.html">Услуги</a>
+            <a href="pricing.html">Цени</a>
+                <a href="aftercare.html">Aftercare</a>
+                <a href="faq.html">Въпроси</a>
+                <a href="contacts.html">Контакти</a>
+            </div>
+
+        
+        <div class="footer-contact">
+            <h3>СВЪРЖИ СЕ С МЕН</h3>
+            <a href="tel:0896915603">089 691 5603</a>
+            <a href="mailto:elinoriliyan21@abv.bg">
+                elinoriliyan21@abv.bg
+            </a>
+            <p>София, България</p>
         </div>
 
-<a href="#contacts" class="calculator-booking">
-    Запази час
-</a>
     </div>
-</section>
 
-<section id="faq">
-    <h2>ЧЕСТО ЗАДАВАНИ ВЪПРОСИ</h2>
-
-    <div class="faq-container">
-
-        <details class="faq-item">
-            <summary>Боли ли татуирането?</summary>
-            <p>
-                Усещането е различно при всеки човек и зависи от мястото,
-                размера и продължителността на татуировката.
-            </p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Колко време отнема една татуировка?</summary>
-            <p>
-                Времето зависи от размера, детайлите и мястото на татуировката.
-                При консултация можем да обсъдим приблизителната продължителност.
-            </p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Мога ли да донеса собствена идея?</summary>
-            <p>
-                Разбира се. Можеш да дойдеш със своя идея, снимка или вдъхновение,
-                а заедно можем да обсъдим как да я превърнем в подходящ дизайн.
-            </p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Мога ли да избера мястото и размера?</summary>
-            <p>
-                Да. Мястото и размерът се обсъждат предварително, за да бъде
-                дизайнът подходящ за конкретната зона на тялото.
-            </p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Как да се подготвя преди татуировката?</summary>
-            <p>
-                Добре е да си отпочинал, нахранен и хидратиран.
-                Избягвай да идваш на празен стомах.
-            </p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Колко време заздравява татуировката?</summary>
-            <p>
-                Заздравяването е индивидуално и зависи от кожата и размера
-                на татуировката. Следвай инструкциите за aftercare, които получаваш.
-            </p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Мога ли да си запиша час за консултация?</summary>
-            <p>
-                Да. Можеш да се свържеш с мен чрез контактите в сайта,
-                за да обсъдим идеята ти и да изберем подходящ ден и час.
-            </p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Правиш ли индивидуални дизайни?</summary>
-            <p>
-                Да. Всеки дизайн може да бъде съобразен с твоята идея,
-                предпочитания и мястото, на което ще бъде татуировката.
-            </p>
-        </details>
-
+    <div class="footer-bottom">
+        <p>© 2026 ELINOR'S INK. Всички права запазени.</p>
+        <p>Създадено с внимание към изкуството.</p>
     </div>
-</section>
 
-<section id="contacts">
-
-<section id="contacts">
-    <h2>КОНТАКТИ</h2>
-
-    <p>Ако искаш да обсъдим идея за татуировка, свържи се с мен.</p>
-
-    <p>📱 Телефон: <a href="tel:0896915603">089 691 5603</a></p>
-
-<p>📧 Email: <a href="mailto:elinoriliyan21@abv.bg">elinoriliyan21@abv.bg</a></p>
-
-<p>📍 Град: София</p>
-<h3>Изпрати запитване</h3>
-
-<form action="mailto:elinoriliyan21@abv.bg" method="post" enctype="text/plain">
-    <input type="text" placeholder="Твоето име" required>
-
-    <input type="email" placeholder="Твоят имейл" required>
-
-    <textarea placeholder="Твоето съобщение" rows="5" required></textarea>
-
-    <button type="submit">Изпрати</button>
-</form>
-</section>
-</main>
-
-
-
-    <footer>
-        <p> ELINOR'S INK</p>
-    </footer>
+</footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>

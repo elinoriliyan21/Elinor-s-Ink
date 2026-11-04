@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Разгледай татуировките и работата на Elinor's Ink.">
+
+    <title>Галерия | ELINOR'S INK</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ГОРНО МЕНЮ -->
+    <header class="site-header">
+
+        <a href="index.html" class="logo">ELINOR'S INK</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">
+            ☰
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html">НАЧАЛО</a>
+            <a href="about.html">ЗА МЕН</a>
+            <a href="gallery.html" class="active">ГАЛЕРИЯ</a>
+            <a href="services.html">УСЛУГИ</a>
+<a href="pricing.html">ЦЕНИ</a>
+            <a href="aftercare.html">AFTERCARE</a>
+            <a href="faq.html">ВЪПРОСИ</a>
+            <a href="contacts.html">КОНТАКТИ</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ОСНОВНО СЪДЪРЖАНИЕ -->
+    <main>
+
+        <!-- ЗАГЛАВИЕ -->
+        <section class="page-hero">
+
+            <p class="hero-subtitle">ELINOR'S INK</p>
+
+            <h1>МОЯТА ГАЛЕРИЯ</h1>
+
+            <div class="hero-line"></div>
+
+            <p>Изкуство, което разказва истории</p>
+
+        </section>
+
+
+        <!-- ГАЛЕРИЯ С ТАТУИРОВКИ -->
+        <section class="gallery-section">
+
+            <div class="section-heading">
+                <p class="section-subtitle">МОЯТА РАБОТА</p>
+
+                <h2>Всяка татуировка е уникална</h2>
+
+                <p>
+                    Разгледай част от моите проекти и вдъхновения.
+                    Натисни върху снимка, за да я видиш в голям размер.
+                </p>
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img src="images/tattoo1.jpg"
+                         alt="Татуировка 1"
+                         onclick="openImage(this)">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tattoo2.jpg"
+                         alt="Татуировка 2"
+                         onclick="openImage(this)">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tattoo3.jpg"
+                         alt="Татуировка 3"
+                         onclick="openImage(this)">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tattoo4.jpg"
+                         alt="Татуировка 4"
+                         onclick="openImage(this)">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tattoo5.jpg"
+                         alt="Татуировка 5"
+                         onclick="openImage(this)">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tattoo6.jpg"
+                         alt="Татуировка 6"
+                         onclick="openImage(this)">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/tattoo7.jpg"
+                         alt="Татуировка 7"
+                         onclick="openImage(this)">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ГОЛЯМО ОТВАРЯНЕ НА СНИМКА -->
+        <div class="image-modal" id="imageModal"
+             onclick="if(event.target === this) closeImage()">
+
+            <button class="modal-close"
+                    onclick="closeImage()"
+                    aria-label="Затвори">
+                &times;
+            </button>
+
+            <button class="modal-arrow modal-prev"
+                    onclick="previousImage()"
+                    aria-label="Предишна снимка">
+                &#10094;
+            </button>
+
+            <img id="bigImage" src="" alt="Голяма снимка на татуировка">
+
+            <button class="modal-arrow modal-next"
+                    onclick="nextImage()"
+                    aria-label="Следваща снимка">
+                &#10095;
+            </button>
+
+        </div>
+
+
+        <!-- ПРИЗИВ ЗА КОНТАКТ -->
+        <section class="gallery-cta">
+
+            <h2>Имаш идея за следващата си татуировка?</h2>
+
+            <p>
+                Нека заедно превърнем идеята ти в изкуство.
+            </p>
+
+            <a href="contacts.html" class="hero-button">
+                СВЪРЖИ СЕ С МЕН
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ФУТЪР -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <h2>ELINOR'S INK</h2>
+                <p>Изкуство, което остава.</p>
+                <p>Всяка татуировка разказва история.</p>
+            </div>
+
+           <div class="footer-links">
+                <h3>БЪРЗИ ВРЪЗКИ</h3>
+                <a href="index.html">Начало</a>
+                <a href="about.html">За мен</a>
+                <a href="gallery.html">Галерия</a>
+                 <a href="services.html">Услуги</a>
+            <a href="pricing.html">Цени</a>
+                <a href="aftercare.html">Aftercare</a>
+                <a href="faq.html">Въпроси</a>
+                <a href="contacts.html">Контакти</a>
+            </div>
+
+
+            <div class="footer-contact">
+                <h3>СВЪРЖИ СЕ С МЕН</h3>
+                <a href="tel:0896915603">089 691 5603</a>
+                <a href="mailto:elinoriliyan21@abv.bg">
+                    elinoriliyan21@abv.bg
+                </a>
+                <p>София, България</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 ELINOR'S INK. Всички права запазени.</p>
+            <p>Създадено с внимание към изкуството.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
