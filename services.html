@@ -4,198 +4,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Услуги на ELINOR'S INK – индивидуален дизайн, татуировки, надписи и cover-up.">
+    <meta name="description" content="Услуги на ELINOR'S INK – татуировки, пиърсинг, Cover Up, лазерно премахване, консултации и индивидуален дизайн.">
     <title>Услуги | ELINOR'S INK</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
+        /* ОСНОВНИ СТИЛОВЕ */
         body {
-            margin: 0;
             background: #171515;
             color: #e9e1dc;
         }
 
-        /* ГОЛЯМА СНИМКА В НАЧАЛОТО */
+        /* HERO СЕКЦИЯ */
         .page-hero {
-            min-height: 320px;
+            min-height: 340px;
+            background:
+                linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.72)),
+                url("images/header-tattoo.jpg") center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 70px 20px;
-            color: white;
-            background:
-                background:
-    linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)),
-    url("images/header-tattoo.jpg") center 45% / cover no-repeat;
-        }
-
-        .page-hero .hero-subtitle {
-            letter-spacing: 5px;
-            font-size: 12px;
-            margin: 0 0 18px;
         }
 
         .page-hero h1 {
-            font-family: Arial, sans-serif;
-            font-size: clamp(36px, 6vw, 58px);
-            font-weight: 700;
-            margin: 0;
-            color: white;
+            color: #d6aaa5;
+            font-size: 44px;
+            letter-spacing: 7px;
+            margin-bottom: 15px;
         }
 
-        .page-hero .hero-line {
-            width: 65px;
-            height: 2px;
-            background: #c9aaa5;
-            margin: 22px auto;
+        .page-hero p {
+            max-width: 700px;
+            line-height: 1.8;
+            font-size: 17px;
         }
 
-        .page-hero > p:last-child {
-            font-size: 14px;
-            margin: 0;
-        }
-
-        /* ЗАГЛАВИЕ НА УСЛУГИТЕ */
+        /* ЗАГЛАВИЕ */
         .services-heading {
             text-align: center;
-            padding: 65px 20px 25px;
+            padding: 65px 20px 35px;
         }
 
-        .services-heading .section-subtitle {
+        .services-heading span {
             color: #c9aaa5;
-            letter-spacing: 4px;
             font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
 
         .services-heading h2 {
-            font-family: Georgia, serif;
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: normal;
+            color: #d6aaa5;
+            font-size: 32px;
+            letter-spacing: 3px;
             margin: 15px 0;
         }
 
         .services-heading p {
-            color: #b7aaa5;
-            max-width: 650px;
-            margin: auto;
+            max-width: 750px;
+            margin: 0 auto;
             line-height: 1.8;
-            font-size: 14px;
+            color: #cfc5c0;
         }
 
-        /* КАРТИЧКИ */
+        /* УСЛУГИ */
         .services-grid {
-            max-width: 1150px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 30px 25px 80px;
+            padding: 20px 25px 80px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 28px;
         }
 
         .service-card {
-            background: #211d1c;
-            border: 1px solid rgba(201,170,165,.35);
+            background: #211e1d;
+            border: 1px solid #594441;
             overflow: hidden;
-            transition: transform .3s, border-color .3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            border-color: #c9aaa5;
+            transform: translateY(-7px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.35);
         }
 
         .service-card img {
             width: 100%;
-            height: 270px;
-            object-fit: cover;
+            height: 280px;
             display: block;
+            object-fit: cover;
         }
 
         .service-info {
             padding: 25px;
         }
 
-        .service-number {
-            color: #c9aaa5;
-            letter-spacing: 3px;
-            font-size: 12px;
-        }
-
         .service-info h3 {
-            font-family: Georgia, serif;
-            color: #e9e1dc;
-            font-size: 23px;
-            font-weight: normal;
-            margin: 14px 0;
+            color: #d6aaa5;
+            font-size: 21px;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
         }
 
         .service-info p {
-            color: #b7aaa5;
-            font-size: 14px;
+            color: #d4cbc6;
             line-height: 1.8;
-            margin: 0;
+            font-size: 15px;
         }
 
-        /* ПОКАНА ЗА КОНТАКТ */
+        /* ДОПЪЛНИТЕЛНА СЕКЦИЯ */
         .services-note {
-            max-width: 850px;
-            margin: 0 auto 75px;
-            padding: 35px 25px;
+            background: #211e1d;
+            border-top: 1px solid #594441;
+            border-bottom: 1px solid #594441;
             text-align: center;
-            border-top: 1px solid rgba(201,170,165,.3);
-            border-bottom: 1px solid rgba(201,170,165,.3);
+            padding: 65px 20px;
         }
 
         .services-note h2 {
-            font-family: Georgia, serif;
-            font-size: 30px;
-            font-weight: normal;
+            color: #d6aaa5;
+            font-size: 28px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
         }
 
         .services-note p {
-            color: #b7aaa5;
+            max-width: 750px;
+            margin: 0 auto 25px;
             line-height: 1.8;
+            color: #d4cbc6;
         }
 
-        .services-note a {
+        .services-button {
             display: inline-block;
-            margin-top: 15px;
-            padding: 13px 28px;
-            background: #c9aaa5;
-            color: #171515;
+            padding: 13px 30px;
+            border: 1px solid #c9aaa5;
+            color: #d6aaa5;
             text-decoration: none;
             letter-spacing: 1px;
-            transition: .3s;
+            transition: 0.3s;
         }
 
-        .services-note a:hover {
-            background: #e9e1dc;
+        .services-button:hover {
+            background: #c9aaa5;
+            color: #171515;
         }
 
-        @media (max-width: 850px) {
+        /* АДАПТИВЕН ДИЗАЙН */
+        @media (max-width: 900px) {
             .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
-        @media (max-width: 550px) {
+        @media (max-width: 600px) {
+            .page-hero h1 {
+                font-size: 30px;
+                letter-spacing: 4px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
+            }
+
+            .services-heading h2 {
+                font-size: 25px;
+            }
+
             .services-grid {
                 grid-template-columns: 1fr;
-                padding: 25px 18px 60px;
+                padding: 15px 18px 55px;
             }
 
             .service-card img {
-                height: 300px;
+                height: 260px;
             }
 
-            .page-hero {
-                min-height: 280px;
+            .services-note h2 {
+                font-size: 23px;
             }
         }
     </style>
@@ -203,16 +192,11 @@
 
 <body>
 
-    <!-- ГОРНО МЕНЮ -->
+    <!-- НАВИГАЦИЯ -->
     <header class="site-header">
+        <a href="index.html" class="logo">ELINOR'S INK</a>
 
-        <a href="index.html" class="logo">
-            ELINOR'S INK
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">
-            ☰
-        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">☰</button>
 
         <nav class="main-nav" id="mainNav">
             <a href="index.html">НАЧАЛО</a>
@@ -224,150 +208,144 @@
             <a href="faq.html">ВЪПРОСИ</a>
             <a href="contacts.html">КОНТАКТИ</a>
         </nav>
-
     </header>
 
-    <main>
+    <!-- ГОРНА СЕКЦИЯ -->
+    <section class="page-hero">
+        <h1>НАШИТЕ УСЛУГИ</h1>
+        <p>
+            В ELINOR'S INK всяка идея заслужава специално внимание.
+            Разгледай услугите и открий вдъхновение за своята следваща промяна.
+        </p>
+    </section>
 
-        <!-- НАЧАЛО СЪС СНИМКА -->
-        <section class="page-hero">
-            <p class="hero-subtitle">ELINOR'S INK</p>
+    <!-- ЗАГЛАВИЕ -->
+    <section class="services-heading">
+        <span>ELINOR'S INK</span>
+        <h2>ИЗКУСТВО ВЪРХУ ТЯЛОТО</h2>
+        <p>
+            Предлагаме разнообразни възможности за изразяване на индивидуалността –
+            от фини детайли до смели композиции и персонализирани идеи.
+        </p>
+    </section>
 
-            <h1>МОИТЕ УСЛУГИ</h1>
+    <!-- КАРТИ С УСЛУГИ -->
+    <section class="services-grid">
 
-            <div class="hero-line"></div>
+        <article class="service-card">
+            <img src="images/service-tattoo.jpg" alt="Процес на създаване на татуировка">
+            <div class="service-info">
+                <h3>Татуировки</h3>
+                <p>
+                    Татуировките са начин да превърнеш лична история, спомен
+                    или идея в изкуство. Всеки проект се съобразява с желанията,
+                    предпочитанията и индивидуалния стил на клиента.
+                </p>
+            </div>
+        </article>
 
-            <p>Изкуство, което разказва истории.</p>
-        </section>
+        <article class="service-card">
+            <img src="images/service-piercing.jpg" alt="Поставяне на пиърсинг на ухо">
+            <div class="service-info">
+                <h3>Пиърсинг</h3>
+                <p>
+                    Пиърсингът е стилен начин за допълване на индивидуалната визия.
+                    Изборът на място и бижу се обсъжда предварително, за да отговаря
+                    на предпочитанията и желанията на клиента.
+                </p>
+            </div>
+        </article>
 
-        <!-- ЗАГЛАВИЕ -->
-        <section class="services-heading">
-            <p class="section-subtitle">КАКВО ПРЕДЛАГАМ</p>
+        <article class="service-card">
+            <img src="images/service-coverup.jpg" alt="Флорална татуировка">
+            <div class="service-info">
+                <h3>Cover Up</h3>
+                <p>
+                    Cover Up е художествено преобразяване на стара или нежелана
+                    татуировка чрез нов дизайн. Идеята е да се създаде различна
+                    композиция, съобразена с особеностите на съществуващата татуировка.
+                </p>
+            </div>
+        </article>
 
-            <h2>Всяка идея заслужава внимание</h2>
+        <article class="service-card">
+            <img src="images/service-laser.jpg" alt="Лазерна процедура за премахване на татуировка">
+            <div class="service-info">
+                <h3>Лазерно премахване</h3>
+                <p>
+                    Лазерното премахване е услуга, насочена към постепенното
+                    избледняване на нежелани татуировки. Възможностите и очакванията
+                    се обсъждат индивидуално, тъй като резултатите зависят от
+                    различни фактори.
+                </p>
+            </div>
+        </article>
 
-            <p>
-                Всяка татуировка носи своя история.
-                Моето желание е да превърна твоята идея
-                в индивидуално произведение на изкуството.
-            </p>
-        </section>
+        <article class="service-card">
+            <img src="images/service-consultation.jpg" alt="Консултация преди татуиране">
+            <div class="service-info">
+                <h3>Безплатна консултация</h3>
+                <p>
+                    Всяка добра идея започва с разговор. По време на консултацията
+                    обсъждаме желания дизайн, мястото, размера, стила и всички
+                    подробности около бъдещия проект.
+                </p>
+            </div>
+        </article>
 
-        <!-- УСЛУГИ СЪС СНИМКИ -->
-        <section class="services-grid">
+        <article class="service-card">
+            <img src="images/service-design.jpg" alt="Създаване на индивидуален дизайн за татуировка">
+            <div class="service-info">
+                <h3>Индивидуален дизайн</h3>
+                <p>
+                    Всеки човек има своя собствена история. Създаваме персонализирани
+                    идеи и дизайни, вдъхновени от личните предпочитания, символи
+                    и послания, които клиентът иска да носи със себе си.
+                </p>
+            </div>
+        </article>
 
-            <article class="service-card">
-                <img src="images/tattoo1.jpg" alt="Флорална татуировка">
-                <div class="service-info">
-                    <span class="service-number">01 / DESIGN</span>
-                    <h3>Индивидуален дизайн</h3>
-                    <p>
-                        Създаване на персонален дизайн,
-                        съобразен с твоите идеи, стил и предпочитания.
-                    </p>
-                </div>
-            </article>
+    </section>
 
-            <article class="service-card">
-                <img src="images/tattoo2.jpg" alt="Реалистична черносива татуировка">
-                <div class="service-info">
-                    <span class="service-number">02 / BLACK & GREY</span>
-                    <h3>Черно-сиви татуировки</h3>
-                    <p>
-                        Детайлни татуировки с черни и сиви нюанси,
-                        създаващи дълбочина и реализъм.
-                    </p>
-                </div>
-            </article>
-
-            <article class="service-card">
-                <img src="images/tattoo3.jpg" alt="Цветна татуировка">
-                <div class="service-info">
-                    <span class="service-number">03 / COLOR</span>
-                    <h3>Цветни татуировки</h3>
-                    <p>
-                        Изразителни цветни композиции,
-                        съчетаващи нюанси и индивидуален стил.
-                    </p>
-                </div>
-            </article>
-
-            <article class="service-card">
-                <img src="images/tattoo4.jpg" alt="Нежна татуировка с фини линии">
-                <div class="service-info">
-                    <span class="service-number">04 / FINE LINE</span>
-                    <h3>Нежни и фини татуировки</h3>
-                    <p>
-                        Малки и деликатни изображения с фини линии,
-                        подходящи за различни части на тялото.
-                    </p>
-                </div>
-            </article>
-
-            <article class="service-card">
-                <img src="images/tattoo5.jpg" alt="Татуировка с надпис">
-                <div class="service-info">
-                    <span class="service-number">05 / LETTERING</span>
-                    <h3>Надписи и послания</h3>
-                    <p>
-                        Персонализирани надписи, цитати и думи,
-                        които носят специално значение.
-                    </p>
-                </div>
-            </article>
-
-            <article class="service-card">
-                <img src="images/tattoo6.jpg" alt="Художествена татуировка">
-                <div class="service-info">
-                    <span class="service-number">06 / COVER-UP</span>
-                    <h3>Cover-up</h3>
-                    <p>
-                        Обсъждане на нов дизайн за прикриване
-                        или преобразяване на стара татуировка.
-                    </p>
-                </div>
-            </article>
-
-        </section>
-
-        <!-- КОНТАКТ -->
-        <section class="services-note">
-            <h2>Твоята идея заслужава внимание</h2>
-
-            <p>
-                Всяка татуировка започва с разговор.
-                Свържи се с мен, за да обсъдим идеята,
-                размера и мястото на татуировката.
-            </p>
-
-            <a href="contacts.html">СВЪРЖИ СЕ С МЕН</a>
-        </section>
-
-    </main>
+    <!-- КОНСУЛТАЦИЯ -->
+    <section class="services-note">
+        <h2>ТВОЯТА ИДЕЯ ЗАПОЧВА ТУК</h2>
+        <p>
+            Имаш идея за нова татуировка, пиърсинг или различна визия?
+            Свържи се с нас и нека обсъдим възможностите за твоя индивидуален проект.
+        </p>
+        <a href="contacts.html" class="services-button">СВЪРЖИ СЕ С НАС</a>
+    </section>
 
     <!-- ФУТЪР -->
     <footer class="site-footer">
 
         <div class="footer-content">
 
+            <!-- ЛОГО И ПРЕДСТАВЯНЕ -->
             <div class="footer-brand">
                 <h2>ELINOR'S INK</h2>
-                <p>Изкуство, което остава.</p>
+                <p>Изкуството, което остава.</p>
                 <p>Всяка татуировка разказва история.</p>
             </div>
 
+            <!-- БЪРЗИ ВРЪЗКИ -->
             <div class="footer-links">
                 <h3>БЪРЗИ ВРЪЗКИ</h3>
-                <a href="index.html">Начало</a>
-                <a href="about.html">За мен</a>
                 <a href="gallery.html">Галерия</a>
-                <a href="services.html">Услуги</a>
                 <a href="pricing.html">Цени</a>
-                <a href="aftercare.html">Aftercare</a>
-                <a href="faq.html">Въпроси</a>
                 <a href="contacts.html">Контакти</a>
             </div>
 
+            <!-- РАБОТНО ВРЕМЕ -->
+            <div class="footer-hours">
+                <h3>РАБОТНО ВРЕМЕ</h3>
+                <p>Понеделник – Петък: 10:00 – 18:00</p>
+                <p>Събота: 10:00 – 15:00</p>
+                <p>Неделя: Почивен ден</p>
+            </div>
+
+            <!-- КОНТАКТИ -->
             <div class="footer-contact">
                 <h3>СВЪРЖИ СЕ С МЕН</h3>
                 <a href="tel:0896915603">089 691 5603</a>
@@ -379,9 +357,40 @@
 
         </div>
 
+        <!-- МАРКИ -->
+        <div class="footer-brands">
+            <h3>ИЗПОЛЗВАНИ МАРКИ И ОБОРУДВАНЕ</h3>
+
+            <div class="brand-logos">
+
+                <a href="https://www.worldfamoustattooink.com/"
+                   target="_blank" rel="noopener">
+                    <img src="images/world-famous.jpg" alt="World Famous Tattoo Ink">
+                </a>
+
+                <a href="https://www.kwadron.pl/en/"
+                   target="_blank" rel="noopener">
+                    <img src="images/kwadron.jpg" alt="Kwadron">
+                </a>
+
+                <a href="https://shop.world.cheyennetattoo.com/"
+                   target="_blank" rel="noopener">
+                    <img src="images/cheyenne.jpg" alt="Cheyenne">
+                </a>
+
+            </div>
+
+            <a href="#" class="back-to-top" aria-label="Върни се в началото">↑</a>
+        </div>
+
+        <!-- ДОЛНА ЧАСТ -->
         <div class="footer-bottom">
             <p>© 2026 ELINOR'S INK. Всички права запазени.</p>
-            <p>Създадено с внимание към изкуството.</p>
+
+            <div class="footer-legal">
+                <a href="privacy.html">Политика за поверителност</a>
+                <a href="terms.html">Общи условия</a>
+            </div>
         </div>
 
     </footer>

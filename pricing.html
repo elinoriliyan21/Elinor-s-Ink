@@ -1,152 +1,388 @@
 
 <!DOCTYPE html>
 <html lang="bg">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Татуировки, услуги и ориентировъчни цени в ELINOR'S INK.">
-
+    <meta name="description" content="Цени и калкулатор за татуировки, пиърсинг, закриване и лазерно премахване в ELINOR'S INK.">
     <title>Цени | ELINOR'S INK</title>
-
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #171515;
+            color: #e9e1dc;
+        }
+
+        .page-hero {
+            min-height: 300px;
+            background:
+                linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.75)),
+                url("images/header-tattoo.jpg") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .page-hero h1 {
+            color: #d6aaa5;
+            font-size: 42px;
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .calculator-section {
+            padding: 70px 20px;
+            background: #171515;
+        }
+
+        .calculator-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .calculator-heading span {
+            color: #d6aaa5;
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+        .calculator-heading h2 {
+            color: #d6aaa5;
+            font-size: 34px;
+            letter-spacing: 3px;
+            margin: 18px 0;
+        }
+
+        .calculator-heading p {
+            color: #e9e1dc;
+            line-height: 1.7;
+        }
+
+        .calculator-box {
+            max-width: 760px;
+            margin: auto;
+            padding: 35px;
+            background: #292625;
+            border: 1px solid #806b67;
+        }
+
+        .calculator-step {
+            margin-bottom: 30px;
+        }
+
+        .calculator-step h3 {
+            color: #f0e8e3;
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .calculator-step select {
+            width: 100%;
+            padding: 15px;
+            background: #171515;
+            color: #f0e8e3;
+            border: 1px solid #806b67;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .calculate-button {
+            padding: 16px 30px;
+            background: #d6aaa5;
+            color: #211b1a;
+            border: none;
+            letter-spacing: 2px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .calculate-button:hover {
+            background: #f0d0ca;
+        }
+
+        .price-result {
+            margin-top: 25px;
+            padding: 20px;
+            text-align: center;
+            color: #f0d0ca;
+            font-size: 23px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .calculator-disclaimer {
+            margin-top: 15px;
+            color: #c9bfba;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .price-list-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 75px;
+        }
+
+        .price-list-section h2 {
+            text-align: center;
+            color: #d6aaa5;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .price-card {
+            background: #292625;
+            border: 1px solid #806b67;
+            padding: 25px;
+        }
+
+        .price-card h3 {
+            color: #d6aaa5;
+            margin-bottom: 15px;
+        }
+
+        .price-card p {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            border-bottom: 1px solid #594441;
+            padding: 10px 0;
+            color: #e9e1dc;
+        }
+
+        .price-card strong {
+            color: #f0d0ca;
+            white-space: nowrap;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            .page-hero h1 {
+                font-size: 29px;
+                letter-spacing: 3px;
+            }
+
+            .calculator-box {
+                padding: 22px;
+            }
+
+            .calculator-heading h2 {
+                font-size: 27px;
+            }
+
+            .calculate-button {
+                width: 100%;
+            }
+
+            .price-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- ГОРНО МЕНЮ -->
+    <!-- НАВИГАЦИЯ -->
     <header class="site-header">
-
         <a href="index.html" class="logo">ELINOR'S INK</a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">
-            ☰
-        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Отвори меню">☰</button>
 
         <nav class="main-nav" id="mainNav">
             <a href="index.html">НАЧАЛО</a>
             <a href="about.html">ЗА МЕН</a>
             <a href="gallery.html">ГАЛЕРИЯ</a>
-        <a href="services.html">УСЛУГИ</a>
-<a href="pricing.html">ЦЕНИ</a>
+            <a href="services.html">УСЛУГИ</a>
+            <a href="pricing.html" class="active">ЦЕНИ</a>
             <a href="aftercare.html">AFTERCARE</a>
             <a href="faq.html">ВЪПРОСИ</a>
             <a href="contacts.html">КОНТАКТИ</a>
         </nav>
-
     </header>
 
+    <!-- ГОРНА СЕКЦИЯ -->
+    <section class="page-hero">
+        <h1>ЦЕНИ И УСЛУГИ</h1>
+        <p>
+            Разгледай примерните цени и използвай калкулатора,
+            за да получиш ориентировъчна стойност за избраната услуга.
+        </p>
+    </section>
 
-    <main>
+    <!-- КАЛКУЛАТОР -->
+    <section class="calculator-section" id="calculator">
 
-        <!-- ЗАГЛАВИЕ -->
-        <section class="page-hero">
+        <div class="calculator-heading">
+            <span>ПЛАНИРАЙ СВОЯТА ТАТУИРОВКА</span>
+            <h2>Калкулатор за цена</h2>
+            <p>Избери услуга, зона и размер, за да получиш ориентировъчна цена.</p>
+        </div>
 
-            <p class="hero-subtitle">ELINOR'S INK</p>
+        <div class="calculator-box">
 
-            <h1> ЦЕНИ</h1>
+            <div class="calculator-step">
+                <h3>1. Избери услуга</h3>
 
-            <div class="hero-line"></div>
-
-            <p>Твоето тяло. Твоята история. Твоето изкуство.</p>
-
-        </section>
-
-        <!-- КАЛКУЛАТОР -->
-        <section class="calculator-section" id="calculator">
-
-            <div class="section-heading">
-
-                <p class="section-subtitle">ПЛАНИРАЙ СВОЯТА ТАТУИРОВКА</p>
-
-                <h2>Калкулатор за цена</h2>
-
-                <p>
-                    Избери зона и размер, за да получиш
-                    ориентировъчна цена.
-                </p>
-
+                <select id="serviceType">
+                    <option value="">Избери услуга</option>
+                    <option value="tattoo">Татуировка</option>
+                    <option value="piercing">Пиърсинг</option>
+                    <option value="coverup">Закриване на стара татуировка (Cover Up)</option>
+                    <option value="removal">Лазерно премахване</option>
+                </select>
             </div>
 
+            <!-- ПИЪРСИНГ -->
+            <div class="calculator-step" id="piercingOptions" hidden>
+                <h3>2. Избери вид пиърсинг</h3>
 
-            <div class="calculator-box">
+                <select id="piercingType">
+                    <option value="">Избери място</option>
+                    <option value="tongue">Език</option>
+                    <option value="nose">Нос</option>
+                    <option value="lips">Устни</option>
+                    <option value="dermal">Дермален пиърсинг</option>
+                    <option value="ears">Уши</option>
+                    <option value="navel">Пъп</option>
+                </select>
+            </div>
 
-                <h3>1. Избери място върху тялото</h3>
+            <!-- ЗОНА ЗА ТАТУИРОВКА -->
+            <div class="calculator-step" id="tattooOptions" hidden>
+                <h3>2. Избери място върху тялото</h3>
 
-                <div class="body-options">
+                <select id="tattooZone">
+                    <option value="">Избери зона</option>
+                    <option value="arm">Ръка</option>
+                    <option value="leg">Крак</option>
+                    <option value="back">Гръб</option>
+                    <option value="chest">Гърди</option>
+                    <option value="ribs">Ребра</option>
+                    <option value="neck">Врат</option>
+                </select>
+            </div>
 
-                    <button type="button" onclick="selectBodyZone('arm')">
-                        Ръка
-                    </button>
+            <!-- ЗОНА ЗА COVER UP -->
+            <div class="calculator-step" id="coverupOptions" hidden>
+                <h3>2. Избери зона за закриване</h3>
 
-                    <button type="button" onclick="selectBodyZone('leg')">
-                        Крак
-                    </button>
+                <select id="coverupZone">
+                    <option value="">Избери зона</option>
+                    <option value="arm">Ръка</option>
+                    <option value="leg">Крак</option>
+                    <option value="back">Гръб</option>
+                    <option value="chest">Гърди</option>
+                    <option value="ribs">Ребра</option>
+                    <option value="neck">Врат</option>
+                </select>
+            </div>
 
-                    <button type="button" onclick="selectBodyZone('back')">
-                        Гръб
-                    </button>
+            <!-- ЗОНА ЗА ЛАЗЕРНО ПРЕМАХВАНЕ -->
+            <div class="calculator-step" id="removalOptions" hidden>
+                <h3>2. Избери зона за премахване</h3>
 
-                    <button type="button" onclick="selectBodyZone('chest')">
-                        Гърди
-                    </button>
+                <select id="removalZone">
+                    <option value="">Избери зона</option>
+                    <option value="arm">Ръка</option>
+                    <option value="leg">Крак</option>
+                    <option value="back">Гръб</option>
+                    <option value="chest">Гърди</option>
+                    <option value="ribs">Ребра</option>
+                    <option value="neck">Врат</option>
+                </select>
+            </div>
 
-                    <button type="button" onclick="selectBodyZone('ribs')">
-                        Ребра
-                    </button>
-
-                    <button type="button" onclick="selectBodyZone('neck')">
-                        Врат
-                    </button>
-
-                </div>
-
-                <p id="selectedZone">
-                    Избери зона от бутоните по-горе.
-                </p>
-<select id="tattooPlace" style="display: none;">
-    <option value="arm">Ръка</option>
-    <option value="leg">Крак</option>
-    <option value="back">Гръб</option>
-    <option value="chest">Гърди</option>
-    <option value="ribs">Ребра</option>
-    <option value="neck">Врат</option>
-</select>
-
-                <h3>2. Избери размер</h3>
+            <!-- РАЗМЕР -->
+            <div class="calculator-step" id="sizeOptions" hidden>
+                <h3>3. Избери размер</h3>
 
                 <select id="tattooSize">
-                    <option value="small">Малка татуировка</option>
-                    <option value="medium">Средна татуировка</option>
-                    <option value="large">Голяма татуировка</option>
+                    <option value="">Избери размер</option>
+                    <option value="small">Малък – до 5 см</option>
+                    <option value="medium">Среден – 5–15 см</option>
+                    <option value="large">Голям – 15–25 см</option>
+                    <option value="extra">Много голям – над 25 см</option>
                 </select>
-
-
-                
-
-                <button type="button"
-                        class="hero-button"
-                        onclick="calculatePrice()">
-                    ИЗЧИСЛИ ЦЕНАТА
-                </button>
-
-
-                <p id="priceResult" aria-live="polite"></p>
-
-                <a href="contacts.html"
-                   class="hero-button calculator-booking"
-                   style="display: none;">
-                    ЗАПИТАЙ ЗА ЧАС
-                </a>
-
             </div>
 
-        </section>
+            <button type="button" id="calculatePrice" class="calculate-button">
+                ИЗЧИСЛИ ЦЕНАТА
+            </button>
 
+            <div id="priceResult" class="price-result" aria-live="polite"></div>
 
-    </main>
+            <p class="calculator-disclaimer">
+                Посочените цени са примерни и са предназначени за целите на
+                дипломния проект. Крайната стойност зависи от индивидуалните
+                особености на избраната услуга.
+            </p>
 
+        </div>
+    </section>
+
+    <!-- ПРИМЕРЕН ЦЕНОРАЗПИС -->
+    <section class="price-list-section">
+
+        <h2>ПРИМЕРЕН ЦЕНОРАЗПИС</h2>
+
+        <div class="price-list">
+
+            <div class="price-card">
+                <h3>Татуировки</h3>
+                <p>Малка <strong>от 50 €</strong></p>
+                <p>Средна <strong>от 100 €</strong></p>
+                <p>Голяма <strong>от 180 €</strong></p>
+                <p>Много голяма <strong>от 255 €</strong></p>
+            </div>
+
+            <div class="price-card">
+                <h3>Пиърсинг</h3>
+                <p>Език <strong>35 €</strong></p>
+                <p>Нос <strong>25 €</strong></p>
+                <p>Устни <strong>30 €</strong></p>
+                <p>Дермален <strong>45 €</strong></p>
+                <p>Уши <strong>23 €</strong></p>
+                <p>Пъп <strong>33 €</strong></p>
+            </div>
+
+            <div class="price-card">
+                <h3>Закриване на стара татуировка</h3>
+                <p>Малка <strong>от 92 €</strong></p>
+                <p>Средна <strong>от 153 €</strong></p>
+                <p>Голяма <strong>от 230 €</strong></p>
+                <p>Много голяма <strong>от 332 €</strong></p>
+            </div>
+
+            <div class="price-card">
+                <h3>Лазерно премахване</h3>
+                <p>Малка <strong>от 31 €</strong></p>
+                <p>Средна <strong>от 51 €</strong></p>
+                <p>Голяма <strong>от 82 €</strong></p>
+                <p>Много голяма <strong>от 113 €</strong></p>
+            </div>
+
+        </div>
+    </section>
 
     <!-- ФУТЪР -->
     <footer class="site-footer">
@@ -155,20 +391,22 @@
 
             <div class="footer-brand">
                 <h2>ELINOR'S INK</h2>
-                <p>Изкуство, което остава.</p>
+                <p>Изкуството, което остава.</p>
                 <p>Всяка татуировка разказва история.</p>
             </div>
 
-           <div class="footer-links">
+            <div class="footer-links">
                 <h3>БЪРЗИ ВРЪЗКИ</h3>
-                <a href="index.html">Начало</a>
-                <a href="about.html">За мен</a>
                 <a href="gallery.html">Галерия</a>
-                 <a href="services.html">Услуги</a>
-            <a href="pricing.html">Цени</a>
-                <a href="aftercare.html">Aftercare</a>
-                <a href="faq.html">Въпроси</a>
+                <a href="pricing.html">Цени</a>
                 <a href="contacts.html">Контакти</a>
+            </div>
+
+            <div class="footer-hours">
+                <h3>РАБОТНО ВРЕМЕ</h3>
+                <p>Понеделник – Петък: 10:00 – 18:00</p>
+                <p>Събота: 10:00 – 15:00</p>
+                <p>Неделя: Почивен ден</p>
             </div>
 
             <div class="footer-contact">
@@ -182,15 +420,206 @@
 
         </div>
 
+        <!-- МАРКИ -->
+        <div class="footer-brands">
+            <h3>ИЗПОЛЗВАНИ МАРКИ И ОБОРУДВАНЕ</h3>
+
+            <div class="brand-logos">
+
+                <a href="https://www.worldfamoustattooink.com/"
+                   target="_blank" rel="noopener">
+                    <img src="images/world-famous.jpg" alt="World Famous Tattoo Ink">
+                </a>
+
+                <a href="https://www.kwadron.pl/en/"
+                   target="_blank" rel="noopener">
+                    <img src="images/kwadron.jpg" alt="Kwadron">
+                </a>
+
+                <a href="https://shop.world.cheyennetattoo.com/"
+                   target="_blank" rel="noopener">
+                    <img src="images/cheyenne.jpg" alt="Cheyenne">
+                </a>
+
+            </div>
+
+            <a href="#" class="back-to-top" aria-label="Върни се в началото">↑</a>
+        </div>
+
         <div class="footer-bottom">
             <p>© 2026 ELINOR'S INK. Всички права запазени.</p>
-            <p>Създадено с внимание към изкуството.</p>
+
+            <div class="footer-legal">
+                <a href="privacy.html">Политика за поверителност</a>
+                <a href="terms.html">Общи условия</a>
+            </div>
         </div>
 
     </footer>
 
-
     <script src="script.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const serviceType = document.getElementById("serviceType");
+
+        const piercingOptions = document.getElementById("piercingOptions");
+        const tattooOptions = document.getElementById("tattooOptions");
+        const coverupOptions = document.getElementById("coverupOptions");
+        const removalOptions = document.getElementById("removalOptions");
+        const sizeOptions = document.getElementById("sizeOptions");
+
+        const calculateButton = document.getElementById("calculatePrice");
+        const priceResult = document.getElementById("priceResult");
+
+        const piercingPrices = {
+            tongue: 35,
+            nose: 25,
+            lips: 30,
+            dermal: 45,
+            ears: 23,
+            navel: 33
+        };
+
+        const tattooPrices = {
+            small: 50,
+            medium: 100,
+            large: 180,
+            extra: 255
+        };
+
+        const coverupPrices = {
+            small: 92,
+            medium: 153,
+            large: 230,
+            extra: 332
+        };
+
+        const removalPrices = {
+            small: 31,
+            medium: 51,
+            large: 82,
+            extra: 113
+        };
+
+        const zoneMultipliers = {
+            arm: 1,
+            leg: 1.1,
+            back: 1.3,
+            chest: 1.2,
+            ribs: 1.2,
+            neck: 1.1
+        };
+
+        function hideAllOptions() {
+            piercingOptions.hidden = true;
+            tattooOptions.hidden = true;
+            coverupOptions.hidden = true;
+            removalOptions.hidden = true;
+            sizeOptions.hidden = true;
+            priceResult.textContent = "";
+        }
+
+        serviceType.addEventListener("change", function () {
+
+            hideAllOptions();
+
+            if (this.value === "tattoo") {
+                tattooOptions.hidden = false;
+                sizeOptions.hidden = false;
+            }
+
+            if (this.value === "piercing") {
+                piercingOptions.hidden = false;
+            }
+
+            if (this.value === "coverup") {
+                coverupOptions.hidden = false;
+                sizeOptions.hidden = false;
+            }
+
+            if (this.value === "removal") {
+                removalOptions.hidden = false;
+                sizeOptions.hidden = false;
+            }
+        });
+
+        calculateButton.addEventListener("click", function () {
+
+            const service = serviceType.value;
+            let price = 0;
+            let zone = "";
+            let size = "";
+
+            if (!service) {
+                priceResult.textContent = "Моля, избери услуга.";
+                return;
+            }
+
+            if (service === "piercing") {
+
+                const piercing = document.getElementById("piercingType").value;
+
+                if (!piercing) {
+                    priceResult.textContent = "Моля, избери вид пиърсинг.";
+                    return;
+                }
+
+                price = piercingPrices[piercing];
+
+            } else {
+
+                size = document.getElementById("tattooSize").value;
+
+                if (!size) {
+                    priceResult.textContent = "Моля, избери размер.";
+                    return;
+                }
+
+                if (service === "tattoo") {
+                    zone = document.getElementById("tattooZone").value;
+
+                    if (!zone) {
+                        priceResult.textContent = "Моля, избери зона за татуировката.";
+                        return;
+                    }
+
+                    price = tattooPrices[size] * zoneMultipliers[zone];
+                }
+
+                if (service === "coverup") {
+                    zone = document.getElementById("coverupZone").value;
+
+                    if (!zone) {
+                        priceResult.textContent = "Моля, избери зона за закриване.";
+                        return;
+                    }
+
+                    price = coverupPrices[size] * zoneMultipliers[zone];
+                }
+
+                if (service === "removal") {
+                    zone = document.getElementById("removalZone").value;
+
+                    if (!zone) {
+                        priceResult.textContent = "Моля, избери зона за премахване.";
+                        return;
+                    }
+
+                    price = removalPrices[size] * zoneMultipliers[zone];
+                }
+            }
+
+            price = Math.round(price);
+
+            priceResult.textContent =
+                "Ориентировъчна цена: " + price + " €";
+
+        });
+
+    });
+    </script>
 
 </body>
 </html>

@@ -15,32 +15,23 @@ const mainNav = document.getElementById("mainNav");
 if (menuToggle && mainNav) {
 
     menuToggle.addEventListener("click", function () {
-
         mainNav.classList.toggle("open");
 
         const isOpen = mainNav.classList.contains("open");
 
         menuToggle.textContent = isOpen ? "✕" : "☰";
         menuToggle.setAttribute("aria-expanded", isOpen);
-
     });
-
-    // Затваряне на менюто след избор на страница
 
     const navLinks = mainNav.querySelectorAll("a");
 
     navLinks.forEach(function (link) {
-
         link.addEventListener("click", function () {
-
             mainNav.classList.remove("open");
             menuToggle.textContent = "☰";
             menuToggle.setAttribute("aria-expanded", "false");
-
         });
-
     });
-
 }
 
 
@@ -48,19 +39,18 @@ if (menuToggle && mainNav) {
    2. ГАЛЕРИЯ
 ===================================================== */
 
-// Списък със снимките
+// Автоматично вземане на всички снимки
+// в реда, в който са подредени в HTML.
 
-const images = [
-    "images/tattoo1.jpg",
-    "images/tattoo2.jpg",
-    "images/tattoo3.jpg",
-    "images/tattoo4.jpg",
-    "images/tattoo5.jpg",
-    "images/tattoo6.jpg",
-    "images/tattoo7.jpg"
-];
-
+let images = [];
 let currentImage = 0;
+
+function getGalleryImages() {
+
+    return Array.from(
+        document.querySelectorAll(".gallery-grid .gallery-item img")
+    );
+}
 
 
 // Отваряне на снимка
@@ -72,18 +62,65 @@ function openImage(image) {
 
     if (!modal || !bigImage) return;
 
-    currentImage = images.indexOf(image.getAttribute("src"));
+    images = getGalleryImages();
 
-    if (currentImage === -1) {
-        currentImage = 0;
-    }
+    currentImage = images.indexOf(image);
 
-    bigImage.src = images[currentImage];
+    if (currentImage === -1) return;
+
+    bigImage.src = image.src;
+    bigImage.alt = image.alt;
 
     modal.style.display = "flex";
 
     document.body.style.overflow = "hidden";
+}
 
+
+// Обновяване на голямата снимка
+
+function updateBigImage() {
+
+    const bigImage = document.getElementById("bigImage");
+
+    if (!bigImage || images.length === 0) return;
+
+    const selectedImage = images[currentImage];
+
+    bigImage.src = selectedImage.src;
+    bigImage.alt = selectedImage.alt;
+}
+
+
+// Следваща снимка
+
+function nextImage() {
+
+    if (images.length === 0) return;
+
+    currentImage++;
+
+    if (currentImage >= images.length) {
+        currentImage = 0;
+    }
+
+    updateBigImage();
+}
+
+
+// Предишна снимка
+
+function previousImage() {
+
+    if (images.length === 0) return;
+
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = images.length - 1;
+    }
+
+    updateBigImage();
 }
 
 
@@ -98,55 +135,11 @@ function closeImage() {
     modal.style.display = "none";
 
     document.body.style.overflow = "";
-
-}
-
-
-// Следваща снимка
-
-function nextImage() {
-
-    currentImage++;
-
-    if (currentImage >= images.length) {
-        currentImage = 0;
-    }
-
-    updateBigImage();
-
-}
-
-
-// Предишна снимка
-
-function previousImage() {
-
-    currentImage--;
-
-    if (currentImage < 0) {
-        currentImage = images.length - 1;
-    }
-
-    updateBigImage();
-
-}
-
-
-// Обновяване на голямата снимка
-
-function updateBigImage() {
-
-    const bigImage = document.getElementById("bigImage");
-
-    if (!bigImage) return;
-
-    bigImage.src = images[currentImage];
-
 }
 
 
 /* =====================================================
-   3. КЛАВИАТУРНИ КОМАНДИ ЗА ГАЛЕРИЯТА
+   3. КЛАВИАТУРНИ КОМАНДИ
 ===================================================== */
 
 document.addEventListener("keydown", function (event) {
@@ -173,8 +166,6 @@ document.addEventListener("keydown", function (event) {
 /* =====================================================
    4. КАЛКУЛАТОР ЗА ЦЕНИ
 ===================================================== */
-
-// Цени според зона и размер
 
 const prices = {
 
@@ -217,8 +208,6 @@ const prices = {
 };
 
 
-// Имена на зоните на български
-
 const zoneNames = {
 
     arm: "Ръка",
@@ -247,19 +236,11 @@ function selectBodyZone(zone) {
     selectedZone.textContent =
         "Избрана зона: " + zoneNames[zone];
 
-
-    // Премахване на активния клас от всички бутони
-
     const buttons = document.querySelectorAll(".body-options button");
 
     buttons.forEach(function (button) {
-
         button.classList.remove("active");
-
     });
-
-
-    // Активиране на избрания бутон
 
     const selectedButton = document.querySelector(
         '.body-options button[onclick="selectBodyZone(\'' + zone + '\')"]'
@@ -268,11 +249,10 @@ function selectBodyZone(zone) {
     if (selectedButton) {
         selectedButton.classList.add("active");
     }
-
 }
 
 
-// Изчисляване на цената
+// Изчисляване на цена
 
 function calculatePrice() {
 
@@ -283,15 +263,10 @@ function calculatePrice() {
 
     const bookingButton = document.querySelector(".calculator-booking");
 
-
     if (!sizeSelect || !placeSelect || !priceResult) return;
-
 
     const size = sizeSelect.value;
     const place = placeSelect.value;
-
-
-    // Проверка на избраните стойности
 
     if (!prices[place] || prices[place][size] === undefined) {
 
@@ -299,30 +274,20 @@ function calculatePrice() {
             "Моля, избери място и размер на татуировката.";
 
         return;
-
     }
 
-
     const price = prices[place][size];
-
-
-    // Показване на резултата
 
     priceResult.textContent =
         "Ориентировъчна цена: " + price + " €";
 
-
-    // Показване на бутона за запитване
-
     if (bookingButton) {
-
         bookingButton.style.display = "inline-block";
-
     }
 
 }
 
 
 /* =====================================================
-   5. КРАЙ НА JAVASCRIPT ФАЙЛА
+   КРАЙ НА JAVASCRIPT
 ===================================================== */

@@ -934,10 +934,10 @@ button {
     margin: 0 auto 45px;
 
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1.3fr;
-    gap: 50px;
+    grid-template-columns: 1.3fr 1fr 1.3fr 1.2fr;
+    gap: 35px;
+    align-items: start;
 }
-
 .footer-brand h2 {
     font-size: 27px;
     letter-spacing: 4px;
@@ -984,7 +984,24 @@ button {
     font-size: 14px;
     color: var(--muted);
 }
+.footer-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
 
+.footer-hours h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: var(--rose);
+}
+
+
+.footer-hours p {
+    font-size: 14px;
+    color: var(--muted);
+}
 .footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
@@ -1001,7 +1018,66 @@ button {
     color: #8f8581;
     font-size: 12px;
 }
+/* ЛОГА НА МАРКИТЕ */
 
+.footer-brands {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    text-align: center;
+}
+
+.footer-brands h3 {
+    color: var(--rose);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+.brand-logos {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    justify-content: center;
+    gap: 18px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.brand-logos a {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    background: #f0e9e5;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.brand-logos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.brand-logos a:hover {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 700px) {
+    .brand-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+.
+@media (max-width: 700px) {
+    .brand-logos {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
 
 /* =====================================================
    17. АНИМАЦИИ
@@ -1225,4 +1301,258 @@ button {
         transition-duration: 0.01ms !important;
     }
 
+}
+/* Бутон за връщане в началото */
+.back-to-top {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--rose);
+    color: #211e1d;
+    border: 1px solid var(--rose);
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.back-to-top:hover {
+    background: transparent;
+    color: var(--rose);
+    transform: translateY(-55%);
+}
+
+.footer-brands {
+    position: relative;
+}
+
+@media (max-width: 700px) {
+    .back-to-top {
+        position: static;
+        margin: 20px auto 0;
+        transform: none;
+    }
+}/* УВОДНО ПРЕДСТАВЯНЕ */
+
+.welcome-section {
+    padding: 100px 20px;
+    background: rgba(20, 17, 16, 0.72);
+    text-align: center;
+    position: relative;
+}
+.welcome-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 30px;
+}
+.welcome-subtitle {
+    color: var(--rose);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.welcome-content h2 {
+    color: #f0e9e5;
+    font-size: 36px;
+    margin: 22px 0;
+    letter-spacing: 1px;
+}
+
+.welcome-line {
+    width: 65px;
+    height: 2px;
+    background: var(--rose);
+    margin: 25px auto;
+}
+
+.welcome-content h3 {
+    color: var(--rose);
+    font-size: 19px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.welcome-content p {
+    color: #c9c0bb;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.welcome-content strong {
+    color: #f0d2c0;
+}
+
+.welcome-content .welcome-ending {
+    color: var(--rose);
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .welcome-section {
+        padding: 60px 22px;
+    }
+
+    .welcome-content h2 {
+        font-size: 27px;
+    }
+
+    .welcome-content p {
+        font-size: 14px;
+    }
+}
+.welcome-content h2,
+.welcome-content h3,
+.welcome-content p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.welcome-content p {
+    color: #f0e9e5;
+}
+
+/* ===== ГАЛЕРИЯ ===== */
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 25px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: var(--rose);
+    font-size: 32px;
+    letter-spacing: 4px;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.section-subtitle {
+    color: var(--rose);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #211e1d;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.06);
+}
+
+/* ГОЛЯМА СНИМКА */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.image-modal img {
+    max-width: 85%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.modal-prev {
+    left: 25px;
+}
+
+.modal-next {
+    right: 25px;
+}
+
+/* АДАПТИВЕН ДИЗАЙН */
+
+@media (max-width: 800px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-item {
+        height: 280px;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 320px;
+    }
+
+    .gallery-section {
+        padding: 40px 15px;
+    }
 }
